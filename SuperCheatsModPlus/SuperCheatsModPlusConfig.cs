@@ -60,154 +60,154 @@ namespace SuperCheatsModPlus
 		/// Supported types for in-game UI are:
 		 [ConfigField(text: "Mutations/Augmentations Abilities",
 		description: "Give OP Abilities To Mutations/Augmentations")]
-		public static bool OpArmorAbilitiesEnabled = true;
+		public  bool OpArmorAbilitiesEnabled = true;
 
 		[ConfigField(text: "Venom Torso Tweak",
 		description: "Venom Torso Can Now Use Two Handed Weapons")]
-		public static bool VenomTorsoCanUseBothHands = true;
+		public  bool VenomTorsoCanUseBothHands = true;
 		
 		[ConfigField(text: "Removable Mutations And Augmentations",
 		description: "Mutations/Augmentations Can Now Be Equipped And Unequipped like Normal Armor")]	
-		public static bool RemovableMutationsAndAugmentations = true;
+		public  bool RemovableMutationsAndAugmentations = true;
 
 		[ConfigField(text: "Alllow Mutation Heads Modules",
 		description: "Mutation Heads Can Equip Modules")]
-		public static bool MutationsCanEquipHeadItems = true;
+		public  bool MutationsCanEquipHeadItems = true;
 
 		[ConfigField(text: "Remove Mounted Weapon Limit",
 		description: "Mounted Weapons Can Be Used As many Times Per Turn As You Want")]
-		public static bool UseMountedWeaponsManyTimesPerTurn = true;
+		public  bool UseMountedWeaponsManyTimesPerTurn = true;
 
 		[ConfigField(text: "All Mutations/Augmentations Can Equip Mounted Weapons/Mech Arms",
 		description: "All Mutations/Augmentations Can Equip Mounted Weapons/Mech Arms")]
-		public static bool UseMountedWeaponAndMechArmOnAugments = true;
+		public  bool UseMountedWeaponAndMechArmOnAugments = true;
 
 		[ConfigField(text: "Free Bionic Repair",
 		description: "Bionics Get Repaired After Every Mission")]
-		public static bool FreeBionicRepair = true;
+		public  bool FreeBionicRepair = true;
 
 		[ConfigField(text: "Op Soldier Skills",
 		description: "Assault Has Rally, Sniper Has Gunslinger, Heavy Has Original OP Rage Burst")]
-		public static bool OpSoldierSkills = true;
+		public  bool OpSoldierSkills = true;
 
 		[ConfigField(text: "Remote Control Buff",
 		description: "Remote Controle Costs 1 Ap And 1 Wp To Use")]
-		public static bool RemoteControlBuff = true;
+		public  bool RemoteControlBuff = true;
 
 		[ConfigField(text: "Op Living Weapons",
 		description: "Gives A Big Buff To All Living Weapons")]
-		public static bool OpLivingWeapons = true;
+		public  bool OpLivingWeapons = true;
 
 		[ConfigField(text: "ArchAngel RL1 Blast Radius",
 		description: "Gives The RL1 a Blast Radius Like All other Rocket/Grenade Launchers")]
-		public static bool ArchAngelRL1HasBlastRadius = true;
+		public  bool ArchAngelRL1HasBlastRadius = true;
 
 		[ConfigField(text: "Instant Research",
 		description: "All Research Is Instant ")]
-		public static bool InstantResearch = true;
+		public  bool InstantResearch = true;
 
 		[ConfigField(text: "Instant Manufacturing",
 		description: "All Manufacturing Is Instant")]
-		public static bool InstantManufacturing = true;
+		public  bool InstantManufacturing = true;
 
 		[ConfigField(text: "Instant Facility Construction",
 		description: "Instant Facility Constructio")]
-		public static bool InstantFacilityConstruction = true;
+		public  bool InstantFacilityConstruction = true;
 
 		[ConfigField(text: "Facilities Do Not RequirePower",
 		description: "Facilities Do Not RequirePower")]
-		public static bool FacilitiesDoNotRequirePower = true;
+		public  bool FacilitiesDoNotRequirePower = true;
 
 		[ConfigField(text: "Unlock All Facilities",
 		description: "Unlock All Facilities")]
-		public static bool UnlockAllFacilities = true;
+		public  bool UnlockAllFacilities = true;
 
 		[ConfigField(text: "Everything Half Off",
 		description: "Buy All Weapons, Armor, Vehicles, Modules, Items, etc... At A 50% Discount")]
-		public static bool EverythingHalfOff = true;
+		public  bool EverythingHalfOff = true;
 
 		[ConfigField(text: "Manufacture Everything",
 		description: "Unlock Everything For Manufacturing, Even Promo Skins And Hidden Weapons Like Biogas Launcher")]
-		public static bool ManufactureEverything = true;
+		public  bool ManufactureEverything = true;
 
 		[ConfigField(text: "Start With Elite Soldiers",
 		description: "Start The Game With Tobias West, Pirate King, The Exalted, Synedrion Leader, And Godly")]
-		public static bool StartWithEliteSoldiers = true;
+		public  bool StartWithEliteSoldiers = true;
 
 		[ConfigField(text: "Disable Corruption",
 		description: "Turn Off Corruption")]
-		public static bool DisableCorruption = true;
+		public  bool DisableCorruption = true;
 
 		[ConfigField(text: "Increase Soldier Inventory Slots",
 		description: "Allows Backpack To Hold 9 Items")]
-		public static bool IncreaseSoldierInventorySlots = true;
+		public  bool IncreaseSoldierInventorySlots = true;
 
 		[ConfigField(text: "Unlock All Bionics",
 		description: "Unlock All Bionics With Only The First Bionics Research")]
-		public static bool UnlockAllBionics = true;
+		public  bool UnlockAllBionics = true;
 
 		[ConfigField(text: "Unlock All Mutations",
 		description: "Unlock All Mutations With Only The First Mutation Research")]
-		public static bool UnlockAllMutations = true;
+		public  bool UnlockAllMutations = true;
 
 		[ConfigField(text: "Max Level Soldiers",
 		description: "Give 9K XP To All Soldiers Everytime You Enter Geoscape")]
-		public static bool MaxLevelSoldiers = true;
+		public  bool MaxLevelSoldiers = true;
 
 		[ConfigField(text: "Give 350 XP To All Soldiers Once",
 		description: "Gives 350 XP To All Soldiers Once When You Enter Geoscape")]
-		public static bool Give350XPToAllSoldiersOnce = true;
+		public  bool Give350XPToAllSoldiersOnce = true;
 
 		[ConfigField(text: "Infinite Special Points",
 		description: "Gives 9k SP Everytime You Enter Geoscape")]
-		public static bool InfiniteSpecialPoints = true;
+		public  bool InfiniteSpecialPoints = true;
 
 		[ConfigField(text: "Get 350 Special Points Once",
 		description: "Gives 350 SP To All Soldiers Once When You Enter Geoscape")]
-		public static bool Get350SpecialPointsOnce = true;
+		public  bool Get350SpecialPointsOnce = true;
 
 		[ConfigField(text: "Unlock All Specializations",
 		description: "Unlock All Specializations From The Beginning Of The Game")]
-		public static bool UnlockAllSpecializations = true;
+		public  bool UnlockAllSpecializations = true;
 
 		[ConfigField(text: "Show Me The Money",
 		description: "Get 10K Of Each Resource")]
-		public static bool Get10ThousandOfAllResources = true;
+		public  bool Get10ThousandOfAllResources = true;
 
 		[ConfigField(text: "Heal All Soldiers After Missions",
 		description: "Automatically Heal All Soldiers After Missions")]
-		public static bool HealAllSoldiersAfterMissions = true;
+		public  bool HealAllSoldiersAfterMissions = true;
 
 		[ConfigField(text: "Never Get Tired Or Exhausted",
 		description: "Never Get Tired Or Exhausted")]
-		public static bool NeverGetTiredOrExhausted = true;
+		public  bool NeverGetTiredOrExhausted = true;
 
 		[ConfigField(text: "OP Kaos Weapons",
 		description: "Gives A Big Buffs To Kaos Weapons")]
-		public static bool OPKaosWeapons = true;
+		public  bool OPKaosWeapons = true;
 
 		[ConfigField(text: "Gold Armor Skins Have Special Abilities",
 		description: "Gold Promo Armor Set Have Special Abilities")]
-		public static bool GoldArmorSkinsHaveSpecialAbilities = true;
+		public  bool GoldArmorSkinsHaveSpecialAbilities = true;
 
 		[ConfigField(text: "Turn On Other Adjustments",
 		description: "Turn On Other Adjustments")]
-		public static bool TurnOnOtherAdjustments = true;
+		public  bool TurnOnOtherAdjustments = true;
 
 		[ConfigField(text: "Other Adjustments Vehicle Bay Aircraft Slots",
 		description: "Modify The Amount Of Aircraft Slots Vehicle Bay Can Hold")]
-		public static int VehicleBayAircraftSlots = 2;
+		public  int VehicleBayAircraftSlots = 2;
 
 		[ConfigField(text: "Other Adjustments Ground Vehicle Slots",
 		description: "Modify The Amount Of Ground Vehicle Slots Vehicle Bay Can Hold")]
-		public static int VehicleBayGroundVehicleSlots = 2;
+		public  int VehicleBayGroundVehicleSlots = 2;
 
 		[ConfigField(text: "Vehicle Bay Aircraft Heal Amount",
 		description: "Modify The Amount Of Healing Vehicle Bay gives Per Hour")]
-		public static int VehicleBayAircraftHealAmount = 48;
+		public  int VehicleBayAircraftHealAmount = 48;
 
 		[ConfigField(text: "Vehicle Bay Ground Vehicle Heal Amount",
 		description: "Modify The Amount Of Healing Vehicle Bay gives Per Hour")]
-		public static int VehicleBayGroundVehicleHealAmount = 20;
+		public  int VehicleBayGroundVehicleHealAmount = 20;
 	}
 }

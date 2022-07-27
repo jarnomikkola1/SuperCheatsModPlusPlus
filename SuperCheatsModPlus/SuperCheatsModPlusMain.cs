@@ -102,9 +102,30 @@ namespace SuperCheatsModPlus
 			{
 				base.Logger.LogInfo(e.ToString() ?? "");
 			}
-			MountedWeaponsMechArms.Change_Augmentations();
-			InstantStuffAndDiscounts.Change_Time();
-			EliteSoldiers.EliteSquad();
+
+			if (Config.UseMountedWeaponAndMechArmOnAugments == true)
+            {
+				MountedWeaponsMechArms.Change_Augmentations();
+			}
+
+			if (Config.MutationsCanEquipHeadItems == true)
+            {
+				MountedWeaponsMechArms.MutationHead();
+			}
+
+			if (Config.UseMountedWeaponsManyTimesPerTurn == true)
+            {
+				MountedWeaponsMechArms.MountedWeaponUses();
+			}
+
+
+				InstantStuffAndDiscounts.Change_Time();
+			
+			if (Config.StartWithEliteSoldiers == true)
+            {
+				EliteSoldiers.EliteSquad();
+			}
+				
 			Corruption.Change_Corruption();
 			Patches.Change_Patches();
 			MutationsAndAugmentations.Change_PermanentAug();
