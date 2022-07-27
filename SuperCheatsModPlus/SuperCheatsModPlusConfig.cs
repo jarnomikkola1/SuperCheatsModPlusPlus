@@ -190,6 +190,42 @@ namespace SuperCheatsModPlus
 		description: "Gold Promo Armor Set Have Special Abilities")]
 		public  bool GoldArmorSkinsHaveSpecialAbilities = true;
 
+		//[ConfigField(text: "Augmentation limit",
+		//description: "Adjust How Many Augments A Soldier Can Have")]		
+		//public int MaxAugmentations = 3;
+		//
+		//[ConfigField(text: "Adjust Amount Of Personal Perks Soldiers Get, Max 7",
+		//description: "Adjust Amount Of Personal Perks Soldiers Get, Max 7")]	
+		//public int PersonalAbilitiesCount = 5;
+		//
+		//[ConfigField(text: "Maximum strength",
+		//description: "vanilla default is 35")]		
+		//public int MaxStrength = 35;
+		//
+		//[ConfigField(text: "Maximum willpower",
+		//description: "vanilla default is 20")]		
+		//public int MaxWill = 20;
+		//
+		//[ConfigField(text: "Maximum Speed",
+		//description: "vanilla default is 20")]
+		//public int MaxSpeed = 20;
+		//
+		//[ConfigField(text: "Maximum Stamina",
+		//description: "vanilla default is 40")]
+		//public int Stamina = 50;
+		//
+		//[ConfigField(text: "Tired Status Stamina Below",
+		//description: "Soldiers will get the status 'Tired' when their stamina falls be below this value (percentage), vanilla default is 25%, 30")]		
+		//public int TiredStatusStaminaBelow = 30;
+		//
+		//[ConfigField(text: "Exhausted Status Stamina Below",
+		//description: "Soldiers will get the status 'Exhausted' when their stamina falls be below this value (percentage), vanilla default is 0%, 10")]
+		//public int ExhaustedStatusStaminaBelow = 10;
+		//
+		//[ConfigField(text: "Recover From Paralysis And Virus Faster",
+		//description: "Recover From Paralysis And Virus Faster0")]			
+		//public bool FastMetabolism = true;
+
 		//[ConfigField(text: "Turn On Other Adjustments",
 		//description: "Turn On Other Adjustments")]
 		//public  bool TurnOnOtherAdjustments = true;

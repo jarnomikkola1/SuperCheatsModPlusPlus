@@ -25,16 +25,13 @@ using UnityEngine.Events;
 using PhoenixPoint.Common.Game;
 using PhoenixPoint.Modding;
 using SuperCheatsModPlus;
+using UnityEngine;
 
 namespace SuperCheatsModPlus
 {
     internal class Patches
-    {
+    {        
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
-        
-        
-        
-        //public new SuperCheatsModPlusConfig Config => (SuperCheatsModPlusConfig)base.Config;
         public static void Change_Patches()
         {
 
@@ -42,12 +39,14 @@ namespace SuperCheatsModPlus
     }
     
         [HarmonyPatch(typeof(PhoenixStatisticsManager), "OnGeoscapeLevelStart")]
-        internal  class PhoenixStatisticsManager_OnGeoscapeLevelStart2
+        internal static class PhoenixStatisticsManager_OnGeoscapeLevelStart2
         {
+           
             public static bool flag = true;
             public static bool flag2 = true;
             public static bool flag3 = true;
-            private  void Postfix()
+            
+            private static void Postfix()
             {
                 SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
                 if (Config.UnlockAllBionics == true)
@@ -433,5 +432,6 @@ namespace SuperCheatsModPlus
                 }               
             }            
         }     
-    }     
+    }
+    
 }
