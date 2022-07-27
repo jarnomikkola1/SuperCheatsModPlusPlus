@@ -190,24 +190,24 @@ namespace SuperCheatsModPlus
 		description: "Gold Promo Armor Set Have Special Abilities")]
 		public  bool GoldArmorSkinsHaveSpecialAbilities = true;
 
-		[ConfigField(text: "Turn On Other Adjustments",
-		description: "Turn On Other Adjustments")]
-		public  bool TurnOnOtherAdjustments = true;
-
-		[ConfigField(text: "Other Adjustments Vehicle Bay Aircraft Slots",
-		description: "Modify The Amount Of Aircraft Slots Vehicle Bay Can Hold")]
-		public  int VehicleBayAircraftSlots = 2;
-
-		[ConfigField(text: "Other Adjustments Ground Vehicle Slots",
-		description: "Modify The Amount Of Ground Vehicle Slots Vehicle Bay Can Hold")]
-		public  int VehicleBayGroundVehicleSlots = 2;
-
-		[ConfigField(text: "Vehicle Bay Aircraft Heal Amount",
-		description: "Modify The Amount Of Healing Vehicle Bay gives Per Hour")]
-		public  int VehicleBayAircraftHealAmount = 48;
-
-		[ConfigField(text: "Vehicle Bay Ground Vehicle Heal Amount",
-		description: "Modify The Amount Of Healing Vehicle Bay gives Per Hour")]
-		public  int VehicleBayGroundVehicleHealAmount = 20;
+		//[ConfigField(text: "Turn On Other Adjustments",
+		//description: "Turn On Other Adjustments")]
+		//public  bool TurnOnOtherAdjustments = true;
+		//
+		//[ConfigField(text: "Other Adjustments Vehicle Bay Aircraft Slots",
+		//description: "Modify The Amount Of Aircraft Slots Vehicle Bay Can Hold")]
+		//public  int VehicleBayAircraftSlots = 2;
+		//
+		//[ConfigField(text: "Other Adjustments Ground Vehicle Slots",
+		//description: "Modify The Amount Of Ground Vehicle Slots Vehicle Bay Can Hold")]
+		//public  int VehicleBayGroundVehicleSlots = 2;
+		//
+		//[ConfigField(text: "Vehicle Bay Aircraft Heal Amount",
+		//description: "Modify The Amount Of Healing Vehicle Bay gives Per Hour")]
+		//public  int VehicleBayAircraftHealAmount = 48;
+		//
+		//[ConfigField(text: "Vehicle Bay Ground Vehicle Heal Amount",
+		//description: "Modify The Amount Of Healing Vehicle Bay gives Per Hour")]
+		//public  int VehicleBayGroundVehicleHealAmount = 20;
 	}
 }

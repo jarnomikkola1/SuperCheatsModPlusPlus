@@ -31,6 +31,10 @@ namespace SuperCheatsModPlus
     internal class Patches
     {
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
+        
+        
+        
+        //public new SuperCheatsModPlusConfig Config => (SuperCheatsModPlusConfig)base.Config;
         public static void Change_Patches()
         {
 
@@ -45,47 +49,48 @@ namespace SuperCheatsModPlus
             public static bool flag3 = true;
             private  void Postfix()
             {
-                if (SuperCheatsModPlusConfig.UnlockAllBionics == true)
+                SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+                if (Config.UnlockAllBionics == true)
                 {
                     UnlockBionics();
                 }
-                if (SuperCheatsModPlusConfig.UnlockAllMutations == true)
+                if (Config.UnlockAllMutations == true)
                 {
                     UnlockMutations();
                 }
-                if (SuperCheatsModPlusConfig.MaxLevelSoldiers == true)
+                if (Config.MaxLevelSoldiers == true)
                 {
                     MaxLvLSoldiers();
                 }
-                if (SuperCheatsModPlusConfig.Give350XPToAllSoldiersOnce == true && flag == true)
+                if (Config.Give350XPToAllSoldiersOnce == true && flag == true)
                 {
                     Give350XP();
                 }
-                if (SuperCheatsModPlusConfig.Get350SpecialPointsOnce == true && flag2 == true)
+                if (Config.Get350SpecialPointsOnce == true && flag2 == true)
                 {
                     Give350SP();
                 }
-                if (SuperCheatsModPlusConfig.InfiniteSpecialPoints == true)
+                if (Config.InfiniteSpecialPoints == true)
                 {
                     InfiniteSp();
                 }
-                if (SuperCheatsModPlusConfig.ManufactureEverything == true)
+                if (Config.ManufactureEverything == true)
                 {
                     ManufactureAll();
                 }
-                if (SuperCheatsModPlusConfig.UnlockAllSpecializations == true)
+                if (Config.UnlockAllSpecializations == true)
                 {
                     UnlockSpecializations();
                 }
-                if (SuperCheatsModPlusConfig.Get10ThousandOfAllResources == true && flag3 == true)
+                if (Config.Get10ThousandOfAllResources == true && flag3 == true)
                 {
                     GetResources();
                 }
-                if (SuperCheatsModPlusConfig.HealAllSoldiersAfterMissions == true)
+                if (Config.HealAllSoldiersAfterMissions == true)
                 {
                     SetHp();
                 }
-                if (SuperCheatsModPlusConfig.NeverGetTiredOrExhausted == true)
+                if (Config.NeverGetTiredOrExhausted == true)
                 {
                     SetStamina();
                 }

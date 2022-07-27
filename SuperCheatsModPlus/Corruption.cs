@@ -12,10 +12,7 @@ namespace SuperCheatsModPlus
         public static void Change_Corruption()
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
-
-            if (SuperCheatsModPlusConfig.DisableCorruption == true)
-            {
-
+           
                 GeoscapeEventDef geoEventCH0WIN2 = Repo.GetAllDefs<GeoscapeEventDef>().FirstOrDefault(ged => ged.name.Equals("PROG_CH2_WIN_GeoscapeEventDef"));
                 GeoscapeEventDef geoEventCH0WIN = Repo.GetAllDefs<GeoscapeEventDef>().FirstOrDefault(ged => ged.name.Equals("PROG_CH0_WIN_GeoscapeEventDef"));
                 
@@ -26,6 +23,5 @@ namespace SuperCheatsModPlus
 
                 geoEventCH0WIN2.GeoscapeEventData.Choices[0].Outcome.VariablesChange = null;
             }
-        }
     }
 }

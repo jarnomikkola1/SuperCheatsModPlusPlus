@@ -14,12 +14,11 @@ namespace SuperCheatsModPlus
 {
     internal class InstantStuffAndDiscounts
     {
+        private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         public static void Change_Time()
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
-
-            if (SuperCheatsModPlusConfig.InstantManufacturing == true)
-            {
+          
                 foreach (TacticalItemDef item in Repo.GetAllDefs<TacticalItemDef>())
                 {
                     item.ManufacturePointsCost = 0;
@@ -43,35 +42,35 @@ namespace SuperCheatsModPlus
                 foreach (GeoVehicleModuleDef item2 in Repo.GetAllDefs<GeoVehicleModuleDef>())
                 {
                     item2.ManufacturePointsCost = 0;
-                }
-            }
-
-            if (SuperCheatsModPlusConfig.InstantResearch == true)
-            {
+                }          
+        }
+        public static void Change_ResearchTime()
+        {                 
                 foreach (ResearchDef rd in Repo.GetAllDefs<ResearchDef>().Where(rd => rd.name.StartsWith("PX_")))
                 {
                     rd.ResearchCost = 0;
-                }
-            }
-
-            if (SuperCheatsModPlusConfig.InstantFacilityConstruction == true)
-            {
+                }         
+        }
+        public static void ConstructionTime()
+        {          
                 foreach (PhoenixFacilityDef facility in Repo.GetAllDefs<PhoenixFacilityDef>().Where(rd => rd.name.Contains("PhoenixFacilityDef")))
                 {
                     facility.ConstructionTimeDays = 0;
-                }
-            }
-
-            if (SuperCheatsModPlusConfig.FacilitiesDoNotRequirePower == true)
-            {
+                }           
+        }
+        public static void NoPower()
+        {
+            
                 foreach (PhoenixFacilityDef facility in Repo.GetAllDefs<PhoenixFacilityDef>().Where(rd => rd.name.Contains("PhoenixFacilityDef")))
                 {
                     facility.PowerCost = 0;
                 }
-            }
+            
+        }
 
-            if (SuperCheatsModPlusConfig.EverythingHalfOff == true)
-            {
+        public static void HalfOff()
+        {
+           
                 ActivateBaseAbilityDef baseCost = Repo.GetAllDefs<ActivateBaseAbilityDef>().FirstOrDefault(rd => rd.name.Contains("ActivateBaseAbilityDef"));
                 TheMarketplaceSettingsDef MarketPlaceCost = Repo.GetAllDefs<TheMarketplaceSettingsDef>().FirstOrDefault(rd => rd.name.Contains("TheMarketplaceSettingsDef"));
 
@@ -160,8 +159,7 @@ namespace SuperCheatsModPlus
                     item.ManufactureLivingCrystals *= 0.5f;
                     item.ManufactureProteanMutane *= 0.5f;
                     item.ManufactureOricalcum *= 0.5f;
-                }
-            }
-        }
-    }
+                }         
+        }                              
+    }    
 }

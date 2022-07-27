@@ -27,8 +27,7 @@ namespace SuperCheatsModPlus
                 DD.TraitsToApply[2],
             };
 
-            if (SuperCheatsModPlusConfig.OpArmorAbilitiesEnabled == true)
-            {
+            
                 TacticalItemDef tentacleTorso = Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("AN_Berserker_Watcher_Torso_BodyPartDef"));
                 tentacleTorso.Abilities = new AbilityDef[]
                 {
@@ -135,8 +134,7 @@ namespace SuperCheatsModPlus
                     agileLegs.Abilities[0],
                     agileLegs.Abilities[1],
                     Repo.GetAllDefs<AbilityDef>().FirstOrDefault(a => a.name.Equals("Dash_AbilityDef")),
-                };
-            }
+                };          
         }
     }
 }

@@ -10,6 +10,7 @@ namespace SuperCheatsModPlus
 {
     internal class MountedWeaponsMechArms
     {
+        private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         public static void Change_Augmentations()
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();

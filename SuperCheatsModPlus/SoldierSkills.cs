@@ -16,8 +16,7 @@ namespace SuperCheatsModPlus
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
             ApplyStatusAbilityDef Rally = Repo.GetAllDefs<ApplyStatusAbilityDef>().FirstOrDefault(a => a.name.Equals("Rally_AbilityDef"));
-            if (SuperCheatsModPlusConfig.OpSoldierSkills == true)
-            {
+            
                 SpecializationDef assault = Repo.GetAllDefs<SpecializationDef>().FirstOrDefault(a => a.name.Equals("AssaultSpecializationDef"));
                 assault.AbilityTrack.AbilitiesByLevel[5] = new AbilityTrackSlot
                 {
@@ -35,8 +34,7 @@ namespace SuperCheatsModPlus
                 {
                     Ability = Repo.GetAllDefs<TacticalAbilityDef>().FirstOrDefault(a => a.name.Equals("RageBurst_ShootAbilityDef")),
                     RequiresPrevAbility = false,
-                };
-            }
+                };           
         }
     }
 }

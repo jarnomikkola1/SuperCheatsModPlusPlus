@@ -118,21 +118,111 @@ namespace SuperCheatsModPlus
 				MountedWeaponsMechArms.MountedWeaponUses();
 			}
 
-
+			if (Config.InstantManufacturing == true)
+            {
 				InstantStuffAndDiscounts.Change_Time();
-			
+			}
+
+			if (Config.InstantResearch == true)
+			{
+				InstantStuffAndDiscounts.Change_ResearchTime();
+			}
+
+			if (Config.InstantFacilityConstruction == true)
+			{
+				InstantStuffAndDiscounts.ConstructionTime();
+			}
+
+			if (Config.FacilitiesDoNotRequirePower == true)
+			{
+				InstantStuffAndDiscounts.NoPower();
+			}
+
+			if (Config.EverythingHalfOff == true)
+			{
+				InstantStuffAndDiscounts.HalfOff();
+			}
+
+
 			if (Config.StartWithEliteSoldiers == true)
             {
 				EliteSoldiers.EliteSquad();
 			}
-				
-			Corruption.Change_Corruption();
+
+			if (Config.DisableCorruption == true)
+			{
+				Corruption.Change_Corruption();
+			}
+
+			
 			Patches.Change_Patches();
-			MutationsAndAugmentations.Change_PermanentAug();
-			OtherChanges.Change_Others();
-			PromoSkinArmor.Create_PromoSkinArmor();
-			SoldierSkills.Skills();
-			OpArmor.Change_Armor();		
+
+			if (Config.RemovableMutationsAndAugmentations == true)
+			{
+				MutationsAndAugmentations.Change_PermanentAug();
+			}
+
+			if (Config.VenomTorsoCanUseBothHands == true)
+			{
+				MutationsAndAugmentations.TwoHands();
+			}
+
+			if (Config.FreeBionicRepair == true)
+			{
+				MutationsAndAugmentations.FreeRepair();
+			}
+
+			//if (Config.TurnOnOtherAdjustments == true)
+			//{
+			//	OtherChanges.Change_Others();
+			//}
+			
+			if (Config.OpLivingWeapons == true)
+			{
+				OtherChanges.LivingWeapons();
+			}
+
+			if (Config.OPKaosWeapons == true)
+			{
+				OtherChanges.KaosWeapons();
+			}
+
+			if (Config.IncreaseSoldierInventorySlots == true)
+			{
+				OtherChanges.InventorySlots();
+			}
+
+			if (Config.RemoteControlBuff == true)
+			{
+				OtherChanges.RMBuff();
+			}
+
+			if (Config.ArchAngelRL1HasBlastRadius == true)
+			{
+				OtherChanges.BRadius();
+			}
+
+			if (Config.UnlockAllFacilities == true)
+			{
+				OtherChanges.UnlockFacilities();
+			}
+
+			if (Config.GoldArmorSkinsHaveSpecialAbilities == true)
+			{
+				PromoSkinArmor.Create_PromoSkinArmor();
+			}
+			
+
+			if (Config.OpSoldierSkills == true)
+			{
+				SoldierSkills.Skills();
+			}
+
+			if (Config.OpArmorAbilitiesEnabled == true)
+			{
+				OpArmor.Change_Armor();
+			}
+				
 		}
 
 		/// <summary>

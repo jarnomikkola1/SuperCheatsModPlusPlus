@@ -20,9 +20,7 @@ namespace SuperCheatsModPlus
             TacCharacterDef synedrionLeader = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("SY_Leader_TacCharacterDef"));
             TacCharacterDef pirateKing = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("NJ_SuperHeavy_TacCharacterDef"));
             TacCharacterDef godly = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("NJ_Godly_TacCharacterDef"));
-
-            if (SuperCheatsModPlusConfig.StartWithEliteSoldiers == true)
-            {
+            
                 easy.StartingSquadTemplate = new TacCharacterDef[]
                 {
                     pirateKing,
@@ -58,8 +56,7 @@ namespace SuperCheatsModPlus
                     veryhard.StartingSquadTemplate[3],
                     tobias,
                     godly,
-                };
-            }
+                };           
         }
     }
 }

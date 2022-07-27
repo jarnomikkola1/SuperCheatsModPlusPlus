@@ -194,8 +194,7 @@ namespace SuperCheatsModPlus
                 }
             }
 
-            if (SuperCheatsModPlusConfig.GoldArmorSkinsHaveSpecialAbilities)
-            {
+            
                 assaultTorsoGold.Abilities = new AbilityDef[]
                 {
                     Repo.GetAllDefs<DeathBelcherAbilityDef>().FirstOrDefault(p => p.name.Equals("GoldTorsoOilCrab_AbilityDef")),
@@ -213,8 +212,7 @@ namespace SuperCheatsModPlus
                 {
                     Repo.GetAllDefs<ApplyStatusAbilityDef>().FirstOrDefault(p => p.name.Equals("CrystalStacks_DamageAmplification_AbilityDef")),
                     viralAreaAttack,
-                };
-            }
+                };           
         }
     }
 }
