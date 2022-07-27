@@ -58,11 +58,11 @@ namespace SuperCheatsModPlus
 	{
 		/// Only public fields are serialized.
 		/// Supported types for in-game UI are:
-		 [ConfigField(text: "Mutations/Augmentations Abilities",
+		 [ConfigField(text: "Op Armor Abilities",
 		description: "Give OP Abilities To Mutations/Augmentations")]
 		public  bool OpArmorAbilitiesEnabled = true;
 
-		[ConfigField(text: "Venom Torso Tweak",
+		[ConfigField(text: "Venom Torso Can Use Two Handed Weapons",
 		description: "Venom Torso Can Now Use Two Handed Weapons")]
 		public  bool VenomTorsoCanUseBothHands = true;
 		
@@ -70,11 +70,11 @@ namespace SuperCheatsModPlus
 		description: "Mutations/Augmentations Can Now Be Equipped And Unequipped like Normal Armor")]	
 		public  bool RemovableMutationsAndAugmentations = true;
 
-		[ConfigField(text: "Alllow Mutation Heads Modules",
+		[ConfigField(text: "Allow Head Mutations To Equip Items",
 		description: "Mutation Heads Can Equip Modules")]
 		public  bool MutationsCanEquipHeadItems = true;
 
-		[ConfigField(text: "Remove Mounted Weapon Limit",
+		[ConfigField(text: "Use Mounted Weapons Unlimited Times Per Turn",
 		description: "Mounted Weapons Can Be Used As many Times Per Turn As You Want")]
 		public  bool UseMountedWeaponsManyTimesPerTurn = true;
 
@@ -82,7 +82,7 @@ namespace SuperCheatsModPlus
 		description: "All Mutations/Augmentations Can Equip Mounted Weapons/Mech Arms")]
 		public  bool UseMountedWeaponAndMechArmOnAugments = true;
 
-		[ConfigField(text: "Free Bionic Repair",
+		[ConfigField(text: "Free Bionic Repairs",
 		description: "Bionics Get Repaired After Every Mission")]
 		public  bool FreeBionicRepair = true;
 
@@ -98,7 +98,7 @@ namespace SuperCheatsModPlus
 		description: "Gives A Big Buff To All Living Weapons")]
 		public  bool OpLivingWeapons = true;
 
-		[ConfigField(text: "ArchAngel RL1 Blast Radius",
+		[ConfigField(text: "ArchAngel RL1 Has A Blast Radius",
 		description: "Gives The RL1 a Blast Radius Like All other Rocket/Grenade Launchers")]
 		public  bool ArchAngelRL1HasBlastRadius = true;
 
@@ -138,7 +138,7 @@ namespace SuperCheatsModPlus
 		description: "Turn Off Corruption")]
 		public  bool DisableCorruption = true;
 
-		[ConfigField(text: "Increase Soldier Inventory Slots",
+		[ConfigField(text: "Increase Backpack Slots From 6 To 9",
 		description: "Allows Backpack To Hold 9 Items")]
 		public  bool IncreaseSoldierInventorySlots = true;
 
@@ -170,7 +170,7 @@ namespace SuperCheatsModPlus
 		description: "Unlock All Specializations From The Beginning Of The Game")]
 		public  bool UnlockAllSpecializations = true;
 
-		[ConfigField(text: "Show Me The Money",
+		[ConfigField(text: "Get 10K Of Each Resource",
 		description: "Get 10K Of Each Resource")]
 		public  bool Get10ThousandOfAllResources = true;
 

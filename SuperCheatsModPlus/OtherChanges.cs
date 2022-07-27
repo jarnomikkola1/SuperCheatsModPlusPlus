@@ -19,35 +19,29 @@ namespace SuperCheatsModPlus
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         public static void Change_Others()
         {
-            
-            //PhoenixFacilityDef VehicleBay = Repo.GetAllDefs<PhoenixFacilityDef>().FirstOrDefault(ged => ged.name.Equals("VehicleBay_PhoenixFacilityDef"));
-            //VehicleSlotFacilityComponentDef VehicleBaySlotComponent = Repo.GetAllDefs<VehicleSlotFacilityComponentDef>().FirstOrDefault(ged => ged.name.Equals("E_Element0 [VehicleBay_PhoenixFacilityDef]"));
-            //
-            //
-            //    VehicleBaySlotComponent.AircraftSlots = SuperCheatsModPlusConfig.VehicleBayAircraftSlots;
-            //    VehicleBaySlotComponent.GroundVehicleSlots = SuperCheatsModPlusConfig.VehicleBayGroundVehicleSlots;
-            //    VehicleBaySlotComponent.AircraftHealAmount = SuperCheatsModPlusConfig.VehicleBayAircraftHealAmount;
-            //    VehicleBaySlotComponent.VehicleHealAmount = SuperCheatsModPlusConfig.VehicleBayGroundVehicleHealAmount;
-            
-        }
-        public static void LivingWeapons()
-        {
-            WeaponDef assRifle = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("PX_AcidAssaultRifle_WeaponDef"));
-            WeaponDef Machinegun = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("PX_PoisonMachineGun_WeaponDef"));
+            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            ResearchDef atmosphiricAnalysis = Repo.GetAllDefs<ResearchDef>().FirstOrDefault(ged => ged.name.Equals("PX_AtmosphericAnalysis_ResearchDef"));
+            PhoenixFacilityDef VehicleBay = Repo.GetAllDefs<PhoenixFacilityDef>().FirstOrDefault(ged => ged.name.Equals("VehicleBay_PhoenixFacilityDef"));
+            VehicleSlotFacilityComponentDef VehicleBaySlotComponent = Repo.GetAllDefs<VehicleSlotFacilityComponentDef>().FirstOrDefault(ged => ged.name.Equals("E_Element0 [VehicleBay_PhoenixFacilityDef]"));
 
-            assRifle.DamagePayload.DamageKeywords[0].Value = 40;
-            assRifle.DamagePayload.DamageKeywords[1].Value = 10;
-            Machinegun.DamagePayload.DamageKeywords[0].Value = 35;
-            Machinegun.DamagePayload.DamageKeywords[1].Value = 10;
-            assRifle.DamagePayload.StopOnFirstHit = false;
-            assRifle.DamagePayload.AutoFireShotCount = 7;
-            assRifle.SpreadDegrees = 1.1f;
-            Machinegun.DamagePayload.StopOnFirstHit = false;
-            Machinegun.DamagePayload.AutoFireShotCount = 20;
-            Machinegun.SpreadDegrees = 2.22704697f;
-        }
-        public static void KaosWeapons()
-        {                      
+            if (Config.OpLivingWeapons == true)
+            {
+                WeaponDef assRifle = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("PX_AcidAssaultRifle_WeaponDef"));
+                WeaponDef Machinegun = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("PX_PoisonMachineGun_WeaponDef"));
+
+                assRifle.DamagePayload.DamageKeywords[0].Value = 40;
+                assRifle.DamagePayload.DamageKeywords[1].Value = 10;
+                Machinegun.DamagePayload.DamageKeywords[0].Value = 35;
+                Machinegun.DamagePayload.DamageKeywords[1].Value = 10;
+                assRifle.DamagePayload.StopOnFirstHit = false;
+                assRifle.DamagePayload.AutoFireShotCount = 7;
+                assRifle.SpreadDegrees = 1.1f;
+                Machinegun.DamagePayload.StopOnFirstHit = false;
+                Machinegun.DamagePayload.AutoFireShotCount = 20;
+                Machinegun.SpreadDegrees = 2.22704697f;
+            }
+            if (Config.OPKaosWeapons == true)
+            {
                 WeaponDef AR = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("KS_Obliterator_WeaponDef"));
                 WeaponDef SR = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("KS_Subjector_WeaponDef"));
                 WeaponDef HC = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("KS_Devastator_WeaponDef"));
@@ -120,21 +114,24 @@ namespace SuperCheatsModPlus
 
                 Pistol.DamagePayload.DamageKeywords[0].Value = 60;
                 Pistol.DamagePayload.DamageKeywords[1].Value = 20;
-                Pistol.SpreadDegrees = 1.4f;           
-        }
-        public static void InventorySlots()
-        {
-            BackpackFilterDef backpack = Repo.GetAllDefs<BackpackFilterDef>().FirstOrDefault(a => a.name.Equals("BackpackFilterDef"));
-            backpack.MaxItems = 9;
-        }
-        public static void RMBuff()
-        {         
+                Pistol.SpreadDegrees = 1.4f;
+            }
+
+            if (Config.IncreaseSoldierInventorySlots == true)
+            {
+                BackpackFilterDef backpack = Repo.GetAllDefs<BackpackFilterDef>().FirstOrDefault(a => a.name.Equals("BackpackFilterDef"));
+                backpack.MaxItems = 9;
+            }
+
+            if (Config.RemoteControlBuff == true)
+            {
                 ApplyStatusAbilityDef remoteControl = Repo.GetAllDefs<ApplyStatusAbilityDef>().FirstOrDefault(a => a.name.Equals("ManualControl_AbilityDef"));
                 remoteControl.ActionPointCost = 0.25f;
-                remoteControl.WillPointCost = 1;          
-        }
-        public static void BRadius()
-        {      
+                remoteControl.WillPointCost = 1;
+            }
+
+            if (Config.ArchAngelRL1HasBlastRadius == true)
+            {
                 WeaponDef rl1 = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("NJ_HeavyRocketLauncher_WeaponDef"));
                 WeaponDef rebuke = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("AC_Rebuke_WeaponDef"));
                 ShootAbilityDef ShootRocket = Repo.GetAllDefs<ShootAbilityDef>().FirstOrDefault(a => a.name.Equals("LaunchRocket_ShootAbilityDef"));
@@ -155,11 +152,12 @@ namespace SuperCheatsModPlus
                 rl1.DamagePayload.AoeRadius = 3.5f;
                 rl1.DamagePayload.ConeRadius = 1;
                 rl1.DamagePayload.ProjectileOrigin = rebuke.DamagePayload.ProjectileOrigin;
-                rl1.Abilities[0] = rebuke.Abilities[0];           
-        }
-        public static void UnlockFacilities()
-        {
-                ResearchDef atmosphiricAnalysis = Repo.GetAllDefs<ResearchDef>().FirstOrDefault(ged => ged.name.Equals("PX_AtmosphericAnalysis_ResearchDef"));
+                rl1.Abilities[0] = rebuke.Abilities[0];
+
+            }
+
+            if (Config.UnlockAllFacilities == true)
+            {
                 atmosphiricAnalysis.Unlocks = new ResearchRewardDef[]
                 {
                     atmosphiricAnalysis.Unlocks[0],
@@ -169,7 +167,16 @@ namespace SuperCheatsModPlus
                     Repo.GetAllDefs<FacilityResearchRewardDef>().FirstOrDefault(a => a.name.Equals("PX_CaptureTech_ResearchDef_FacilityResearchRewardDef_0")),
                     Repo.GetAllDefs<FacilityResearchRewardDef>().FirstOrDefault(a => a.name.Equals("ANU_MutationTech_ResearchDef_FacilityResearchRewardDef_0")),
                     Repo.GetAllDefs<FacilityResearchRewardDef>().FirstOrDefault(a => a.name.Equals("PX_AntediluvianArchaeology_ResearchDef_FacilityResearchRewardDef_0")),
-                };       
+                };
+            }
+
+            //if (Config.TurnOnOtherAdjustments == true)
+            //{
+            //    VehicleBaySlotComponent.AircraftSlots = Config.VehicleBayAircraftSlots;
+            //    VehicleBaySlotComponent.GroundVehicleSlots = Config.VehicleBayGroundVehicleSlots;
+            //    VehicleBaySlotComponent.AircraftHealAmount = Config.VehicleBayAircraftHealAmount;
+            //    VehicleBaySlotComponent.VehicleHealAmount = Config.VehicleBayGroundVehicleHealAmount;
+            //}
         }
     }
 }

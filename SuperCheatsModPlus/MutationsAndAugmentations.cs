@@ -12,31 +12,34 @@ namespace SuperCheatsModPlus
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         public static void Change_PermanentAug()
         {
+            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
-            
+
+            if (Config.RemovableMutationsAndAugmentations == true)
+            {
                 foreach (TacticalItemDef Item in Repo.GetAllDefs<TacticalItemDef>())
                 {
                     Item.IsPermanentAugment = false;
-                }                     
-        }
-        public static void TwoHands()
-        {
-            
+                }
+            }
+
+            if (Config.VenomTorsoCanUseBothHands == true)
+            {
                 WeaponDef shooterTorso = Repo.GetAllDefs<WeaponDef>().FirstOrDefault(ged => ged.name.Equals("AN_Berserker_Shooter_LeftArm_WeaponDef"));
 
                 shooterTorso.Abilities = new AbilityDef[]
                 {
                     shooterTorso.Abilities[0],
                 };
-                       
-        }
-        public static void FreeRepair()
-        {
-           
+            }
+
+            if (Config.FreeBionicRepair == true)
+            {
                 foreach (TacticalItemDef item in Repo.GetAllDefs<TacticalItemDef>().Where(a => a.name.Contains("_BIO_")))
                 {
                     item.PreserveDamageTaken = false;
-                }           
-        }
+                }
+            }
+        }        
     }
 }

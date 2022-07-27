@@ -86,7 +86,7 @@ namespace SuperCheatsModPlus
 			/// Metadata is whatever is written in meta.json
 			string v = MetaData.Version.ToString();
 			/// Game creates Harmony object for each mod. Accessible if needed.
-			Harmony harmony = (Harmony)base.HarmonyInstance;
+			HarmonyLib.Harmony harmony = (HarmonyLib.Harmony)HarmonyInstance;
 			/// Mod instance is mod's runtime representation in game.
 			string id = Instance.ID;
 			/// Game creates Game Object for each mod. 
@@ -94,6 +94,7 @@ namespace SuperCheatsModPlus
 			/// PhoenixGame is accessible at any time.
 			PhoenixGame game = GetGame();
 			/// Apply any general game modifications.
+			
 			try
 			{
 				((Harmony)base.HarmonyInstance).PatchAll(base.GetType().Assembly);
@@ -103,126 +104,16 @@ namespace SuperCheatsModPlus
 				base.Logger.LogInfo(e.ToString() ?? "");
 			}
 
-			if (Config.UseMountedWeaponAndMechArmOnAugments == true)
-            {
-				MountedWeaponsMechArms.Change_Augmentations();
-			}
-
-			if (Config.MutationsCanEquipHeadItems == true)
-            {
-				MountedWeaponsMechArms.MutationHead();
-			}
-
-			if (Config.UseMountedWeaponsManyTimesPerTurn == true)
-            {
-				MountedWeaponsMechArms.MountedWeaponUses();
-			}
-
-			if (Config.InstantManufacturing == true)
-            {
-				InstantStuffAndDiscounts.Change_Time();
-			}
-
-			if (Config.InstantResearch == true)
-			{
-				InstantStuffAndDiscounts.Change_ResearchTime();
-			}
-
-			if (Config.InstantFacilityConstruction == true)
-			{
-				InstantStuffAndDiscounts.ConstructionTime();
-			}
-
-			if (Config.FacilitiesDoNotRequirePower == true)
-			{
-				InstantStuffAndDiscounts.NoPower();
-			}
-
-			if (Config.EverythingHalfOff == true)
-			{
-				InstantStuffAndDiscounts.HalfOff();
-			}
-
-
-			if (Config.StartWithEliteSoldiers == true)
-            {
-				EliteSoldiers.EliteSquad();
-			}
-
-			if (Config.DisableCorruption == true)
-			{
-				Corruption.Change_Corruption();
-			}
-
-			
+			MountedWeaponsMechArms.Change_Augmentations();
+			InstantStuffAndDiscounts.Change_Time();
+			EliteSoldiers.EliteSquad();
+			Corruption.Change_Corruption();
 			Patches.Change_Patches();
-
-			if (Config.RemovableMutationsAndAugmentations == true)
-			{
-				MutationsAndAugmentations.Change_PermanentAug();
-			}
-
-			if (Config.VenomTorsoCanUseBothHands == true)
-			{
-				MutationsAndAugmentations.TwoHands();
-			}
-
-			if (Config.FreeBionicRepair == true)
-			{
-				MutationsAndAugmentations.FreeRepair();
-			}
-
-			//if (Config.TurnOnOtherAdjustments == true)
-			//{
-			//	OtherChanges.Change_Others();
-			//}
-			
-			if (Config.OpLivingWeapons == true)
-			{
-				OtherChanges.LivingWeapons();
-			}
-
-			if (Config.OPKaosWeapons == true)
-			{
-				OtherChanges.KaosWeapons();
-			}
-
-			if (Config.IncreaseSoldierInventorySlots == true)
-			{
-				OtherChanges.InventorySlots();
-			}
-
-			if (Config.RemoteControlBuff == true)
-			{
-				OtherChanges.RMBuff();
-			}
-
-			if (Config.ArchAngelRL1HasBlastRadius == true)
-			{
-				OtherChanges.BRadius();
-			}
-
-			if (Config.UnlockAllFacilities == true)
-			{
-				OtherChanges.UnlockFacilities();
-			}
-
-			if (Config.GoldArmorSkinsHaveSpecialAbilities == true)
-			{
-				PromoSkinArmor.Create_PromoSkinArmor();
-			}
-			
-
-			if (Config.OpSoldierSkills == true)
-			{
-				SoldierSkills.Skills();
-			}
-
-			if (Config.OpArmorAbilitiesEnabled == true)
-			{
-				OpArmor.Change_Armor();
-			}
-				
+			MutationsAndAugmentations.Change_PermanentAug();
+			OtherChanges.Change_Others();
+			PromoSkinArmor.Create_PromoSkinArmor();
+			SoldierSkills.Skills();
+			OpArmor.Change_Armor();
 		}
 
 		/// <summary>
