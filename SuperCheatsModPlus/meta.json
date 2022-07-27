@@ -1,0 +1,24 @@
+{
+  "ID": "com.example.SuperCheatsModPlus",
+  "AssemblyName": "SuperCheatsModPlus.dll",
+  "Author": [
+    {
+      "Key": "English",
+      "Value": "Dtony"
+    }
+  ],
+  "Version": "1.0",
+  "Name": [
+    {
+      "Key": "English",
+      "Value": "Super Cheats Mod Plus"
+    }
+  ],
+  "Description": [
+    {
+      "Key": "English",
+      "Value": "New Mod description"      
+    }
+  ],
+  "Dependencies": []
+}
