@@ -185,7 +185,7 @@ namespace SuperCheatsModPlus
             TacticalItemDef SniperHelmetGold = Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(p => p.name.Equals("PX_Sniper_Helmet_Gold_BodyPartDef"));
             TacticalItemDef HeavyTorsoGoldGold = Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(p => p.name.Equals("PX_Heavy_Torso_Gold_BodyPartDef"));
             ApplyDamageEffectAbilityDef viralAreaAttack = Repo.GetAllDefs<ApplyDamageEffectAbilityDef>().FirstOrDefault(p => p.name.Equals("ViralAreaAttack_ApplyDamageEffect_AbilityDef"));
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
 
             foreach (TacActorSimpleAbilityAnimActionDef animActionDef in Repo.GetAllDefs<TacActorSimpleAbilityAnimActionDef>().Where(aad => aad.name.Contains("Soldier_Utka_AnimActionsDef")))
             {

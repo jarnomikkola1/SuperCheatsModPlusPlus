@@ -17,7 +17,7 @@ namespace SuperCheatsModPlus
         public static void Change_Time()
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
             if (Config.InstantManufacturing == true)
             {
                 foreach (TacticalItemDef item in Repo.GetAllDefs<TacticalItemDef>())

@@ -14,7 +14,7 @@ namespace SuperCheatsModPlus
         public static void Change_Augmentations()
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
 
             TacticalItemDef jugg = Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("NJ_Jugg_BIO_Torso_BodyPartDef"));
             TacticalItemDef shin = Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("SY_Shinobi_BIO_Torso_BodyPartDef"));

@@ -10,7 +10,7 @@ namespace SuperCheatsModPlus
     {
         public static void EliteSquad()
         {
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
             GameDifficultyLevelDef easy = Repo.GetAllDefs<GameDifficultyLevelDef>().FirstOrDefault(a => a.name.Equals("Easy_GameDifficultyLevelDef"));
             GameDifficultyLevelDef standard = Repo.GetAllDefs<GameDifficultyLevelDef>().FirstOrDefault(a => a.name.Equals("Standard_GameDifficultyLevelDef"));
@@ -32,6 +32,7 @@ namespace SuperCheatsModPlus
                     easy.StartingSquadTemplate[3],
                     tobias,
                     easy.StartingSquadTemplate[5],
+                    exalted,
                 };
                 standard.StartingSquadTemplate = new TacCharacterDef[]
                 {
@@ -41,6 +42,7 @@ namespace SuperCheatsModPlus
                     standard.StartingSquadTemplate[3],
                     pirateKing,
                     godly,
+                    exalted,
                 };
                 hard.StartingSquadTemplate = new TacCharacterDef[]
                 {
@@ -50,6 +52,7 @@ namespace SuperCheatsModPlus
                     hard.StartingSquadTemplate[3],
                     tobias,
                     godly,
+                    exalted,
                 };
                 veryhard.StartingSquadTemplate = new TacCharacterDef[]
                 {
@@ -59,6 +62,7 @@ namespace SuperCheatsModPlus
                     veryhard.StartingSquadTemplate[3],
                     tobias,
                     godly,
+                    exalted,
                 };
             }
         }

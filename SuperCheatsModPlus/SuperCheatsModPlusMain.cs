@@ -59,27 +59,30 @@ namespace SuperCheatsModPlus
 		internal static readonly DefRepository Repo = GameUtl.GameComponent<DefRepository>();
 		internal static readonly SharedData Shared = GameUtl.GameComponent<SharedData>();
 		/// Config is accessible at any time, if any is declared.
-		public new SuperCheatsModPlusConfig Config => (SuperCheatsModPlusConfig)base.Config;
-		//public new SuperCheatsModPlusConfig Config
-		//{
-		//	get
-		//	{
-		//		return (SuperCheatsModPlusConfig)base.Config;
-		//	}
-		//}
+		//public new SuperCheatsModPlusConfig Config => (SuperCheatsModPlusConfig)base.Config;
+		public new SuperCheatsModPlusConfig Config
+		{
+			get
+			{
+				return (SuperCheatsModPlusConfig)base.Config;
+			}
+		}
+
+
 
 
 		/// This property indicates if mod can be Safely Disabled from the game.
 		/// Safely sisabled mods can be reenabled again. Unsafely disabled mods will need game restart ot take effect.
 		/// Unsafely disabled mods usually cannot revert thier changes in OnModDisabled
 		public override bool CanSafelyDisable => true;
+		public static ModMain Main { get; private set; }
 
 		/// <summary>
 		/// Callback for when mod is enabled. Called even on game starup.
 		/// </summary>
 		public override void OnModEnabled()
 		{
-
+			Main = this;
 			/// All mod dependencies are accessible and always loaded.
 			int c = base.Dependencies.Count<ModEntry>();
 			/// Mods have their own logger. Message through this logger will appear in game console and Unity log file.
@@ -123,6 +126,9 @@ namespace SuperCheatsModPlus
 		/// </summary>
 		public override void OnModDisabled()
 		{
+			HarmonyLib.Harmony harmony = (HarmonyLib.Harmony)HarmonyInstance;
+			harmony.UnpatchAll(harmony.Id);
+			Main = null;
 			/// Undo any game modifications if possible. Else "CanSafelyDisable" must be set to false.
 			/// ModGO will be destroyed after OnModDisabled.
 		}

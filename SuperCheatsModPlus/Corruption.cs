@@ -12,7 +12,7 @@ namespace SuperCheatsModPlus
         public static void Change_Corruption()
         {
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
             if (Config.DisableCorruption == true)
             {
 

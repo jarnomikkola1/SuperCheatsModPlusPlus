@@ -15,7 +15,7 @@ namespace SuperCheatsModPlus
         {          
             ShootAbilityDef DD = Repo.GetAllDefs<ShootAbilityDef>().FirstOrDefault(a => a.name.Equals("DeadlyDuo_ShootAbilityDef"));
             ShootAbilityDef RB = Repo.GetAllDefs<ShootAbilityDef>().FirstOrDefault(a => a.name.Equals("RageBurst_ShootAbilityDef"));
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
 
             DD.ExecutionsCount = 2;
             DD.AddFollowupAbilityStatusDef = null;

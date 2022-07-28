@@ -64,135 +64,135 @@ namespace SuperCheatsModPlus
 
 		[ConfigField(text: "Op Armor Abilities",
 		description: "Give OP Abilities To Mutations/Augmentations")]
-		public  bool OpArmorAbilitiesEnabled = true;
+		public  bool OpArmorAbilitiesEnabled = false;
 
 		[ConfigField(text: "Venom Torso Can Use Two Handed Weapons",
 		description: "Venom Torso Can Now Use Two Handed Weapons")]
-		public  bool VenomTorsoCanUseBothHands = true;
+		public  bool VenomTorsoCanUseBothHands = false;
 		
 		[ConfigField(text: "Removable Mutations And Augmentations",
 		description: "Mutations/Augmentations Can Now Be Equipped And Unequipped like Normal Armor")]	
-		public  bool RemovableMutationsAndAugmentations = true;
+		public  bool RemovableMutationsAndAugmentations = false;
 
 		[ConfigField(text: "Allow Head Mutations To Equip Items",
 		description: "Mutation Heads Can Equip Modules")]
-		public  bool MutationsCanEquipHeadItems = true;
+		public  bool MutationsCanEquipHeadItems = false;
 
 		[ConfigField(text: "Use Mounted Weapons Unlimited Times Per Turn",
 		description: "Mounted Weapons Can Be Used As many Times Per Turn As You Want")]
-		public  bool UseMountedWeaponsManyTimesPerTurn = true;
+		public  bool UseMountedWeaponsManyTimesPerTurn = false;
 
 		[ConfigField(text: "All Mutations/Augmentations Can Equip Mounted Weapons/Mech Arms",
 		description: "All Mutations/Augmentations Can Equip Mounted Weapons/Mech Arms")]
-		public  bool UseMountedWeaponAndMechArmOnAugments = true;
+		public  bool UseMountedWeaponAndMechArmOnAugments = false;
 
 		[ConfigField(text: "Free Bionic Repairs",
 		description: "Bionics Get Repaired After Every Mission")]
-		public  bool FreeBionicRepair = true;
+		public  bool FreeBionicRepair = false;
 
 		[ConfigField(text: "Op Soldier Skills",
 		description: "Assault Has Rally, Sniper Has Gunslinger, Heavy Has Original OP Rage Burst")]
-		public  bool OpSoldierSkills = true;
+		public  bool OpSoldierSkills = false;
 
 		[ConfigField(text: "Remote Control Buff",
 		description: "Remote Controle Costs 1 Ap And 1 Wp To Use")]
-		public  bool RemoteControlBuff = true;
+		public  bool RemoteControlBuff = false;
 
 		[ConfigField(text: "Op Living Weapons",
 		description: "Gives A Big Buff To All Living Weapons")]
-		public  bool OpLivingWeapons = true;
+		public  bool OpLivingWeapons = false;
 
 		[ConfigField(text: "ArchAngel RL1 Has A Blast Radius",
 		description: "Gives The RL1 a Blast Radius Like All other Rocket/Grenade Launchers")]
-		public  bool ArchAngelRL1HasBlastRadius = true;
+		public  bool ArchAngelRL1HasBlastRadius = false;
 
 		[ConfigField(text: "Instant Research",
 		description: "All Research Is Instant ")]
-		public  bool InstantResearch = true;
+		public  bool InstantResearch = false;
 
 		[ConfigField(text: "Instant Manufacturing",
 		description: "All Manufacturing Is Instant")]
-		public  bool InstantManufacturing = true;
+		public  bool InstantManufacturing = false;
 
 		[ConfigField(text: "Instant Facility Construction",
 		description: "Instant Facility Constructio")]
-		public  bool InstantFacilityConstruction = true;
+		public  bool InstantFacilityConstruction = false;
 
 		[ConfigField(text: "Facilities Do Not RequirePower",
 		description: "Facilities Do Not RequirePower")]
-		public  bool FacilitiesDoNotRequirePower = true;
+		public  bool FacilitiesDoNotRequirePower = false;
 
 		[ConfigField(text: "Unlock All Facilities",
 		description: "Unlock All Facilities")]
-		public  bool UnlockAllFacilities = true;
+		public  bool UnlockAllFacilities = false;
 
 		[ConfigField(text: "Everything Half Off",
 		description: "Buy All Weapons, Armor, Vehicles, Modules, Items, etc... At A 50% Discount")]
-		public  bool EverythingHalfOff = true;
+		public  bool EverythingHalfOff = false;
 
 		[ConfigField(text: "Manufacture Everything",
 		description: "Unlock Everything For Manufacturing, Even Promo Skins And Hidden Weapons Like Biogas Launcher")]
-		public  bool ManufactureEverything = true;
+		public  bool ManufactureEverything = false;
 
 		[ConfigField(text: "Start With Elite Soldiers",
 		description: "Start The Game With Tobias West, Pirate King, The Exalted, Synedrion Leader, And Godly")]
-		public  bool StartWithEliteSoldiers = true;
+		public  bool StartWithEliteSoldiers = false;
 
 		[ConfigField(text: "Disable Corruption",
 		description: "Turn Off Corruption")]
-		public  bool DisableCorruption = true;
+		public  bool DisableCorruption = false;
 
 		[ConfigField(text: "Increase Backpack Slots From 6 To 9",
 		description: "Allows Backpack To Hold 9 Items")]
-		public  bool IncreaseSoldierInventorySlots = true;
+		public  bool IncreaseSoldierInventorySlots = false;
 
 		[ConfigField(text: "Unlock All Bionics",
 		description: "Unlock All Bionics With Only The First Bionics Research")]
-		public  bool UnlockAllBionics = true;
+		public  bool UnlockAllBionics = false;
 
 		[ConfigField(text: "Unlock All Mutations",
 		description: "Unlock All Mutations With Only The First Mutation Research")]
-		public  bool UnlockAllMutations = true;
+		public  bool UnlockAllMutations = false;
 
 		[ConfigField(text: "Max Level Soldiers",
 		description: "Give 9K XP To All Soldiers Everytime You Enter Geoscape")]
-		public  bool MaxLevelSoldiers = true;
+		public  bool MaxLevelSoldiers = false;
 
 		[ConfigField(text: "Give 350 XP To All Soldiers Once",
 		description: "Gives 350 XP To All Soldiers Once When You Enter Geoscape")]
-		public  bool Give350XPToAllSoldiersOnce = true;
+		public  bool Give350XPToAllSoldiersOnce = false;
 
 		[ConfigField(text: "Infinite Special Points",
 		description: "Gives 9k SP Everytime You Enter Geoscape")]
-		public  bool InfiniteSpecialPoints = true;
+		public  bool InfiniteSpecialPoints = false;
 
 		[ConfigField(text: "Get 350 Special Points Once",
 		description: "Gives 350 SP To All Soldiers Once When You Enter Geoscape")]
-		public  bool Get350SpecialPointsOnce = true;
+		public  bool Get350SpecialPointsOnce = false;
 
 		[ConfigField(text: "Unlock All Specializations",
 		description: "Unlock All Specializations From The Beginning Of The Game")]
-		public  bool UnlockAllSpecializations = true;
+		public  bool UnlockAllSpecializations = false;
 
 		[ConfigField(text: "Get 10K Of Each Resource",
 		description: "Get 10K Of Each Resource")]
-		public  bool Get10ThousandOfAllResources = true;
+		public  bool Get10ThousandOfAllResources = false;
 
 		[ConfigField(text: "Heal All Soldiers After Missions",
 		description: "Automatically Heal All Soldiers After Missions")]
-		public  bool HealAllSoldiersAfterMissions = true;
+		public  bool HealAllSoldiersAfterMissions = false;
 
 		[ConfigField(text: "Never Get Tired Or Exhausted",
 		description: "Never Get Tired Or Exhausted")]
-		public  bool NeverGetTiredOrExhausted = true;
+		public  bool NeverGetTiredOrExhausted = false;
 
 		[ConfigField(text: "OP Kaos Weapons",
 		description: "Gives A Big Buffs To Kaos Weapons")]
-		public  bool OPKaosWeapons = true;
+		public  bool OPKaosWeapons = false;
 
 		[ConfigField(text: "Gold Armor Skins Have Special Abilities",
 		description: "Gold Promo Armor Set Have Special Abilities")]
-		public  bool GoldArmorSkinsHaveSpecialAbilities = true;
+		public  bool GoldArmorSkinsHaveSpecialAbilities = false;
 		
 		[ConfigField(text: "Adjust Personal Perks Amount",
 		description: "Adjust Amount Of Personal Perks Soldiers Get, Max 7")]	
@@ -224,11 +224,11 @@ namespace SuperCheatsModPlus
 		//
 		//[ConfigField(text: "Recover From Paralysis And Virus Faster",
 		//description: "Recover From Paralysis And Virus Faster0")]			
-		//public bool FastMetabolism = true;
+		//public bool FastMetabolism = false;
 
 		//[ConfigField(text: "Turn On Other Adjustments",
 		//description: "Turn On Other Adjustments")]
-		//public  bool TurnOnOtherAdjustments = true;
+		//public  bool TurnOnOtherAdjustments = false;
 		//
 		//[ConfigField(text: "Other Adjustments Vehicle Bay Aircraft Slots",
 		//description: "Modify The Amount Of Aircraft Slots Vehicle Bay Can Hold")]

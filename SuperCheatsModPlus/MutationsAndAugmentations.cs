@@ -12,7 +12,7 @@ namespace SuperCheatsModPlus
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         public static void Change_PermanentAug()
         {
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
             DefRepository Repo = GameUtl.GameComponent<DefRepository>();
 
             if (Config.RemovableMutationsAndAugmentations == true)

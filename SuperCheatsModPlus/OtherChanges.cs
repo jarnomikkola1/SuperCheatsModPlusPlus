@@ -19,7 +19,7 @@ namespace SuperCheatsModPlus
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         public static void Change_Others()
         {
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+            SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
             ResearchDef atmosphiricAnalysis = Repo.GetAllDefs<ResearchDef>().FirstOrDefault(ged => ged.name.Equals("PX_AtmosphericAnalysis_ResearchDef"));
             PhoenixFacilityDef VehicleBay = Repo.GetAllDefs<PhoenixFacilityDef>().FirstOrDefault(ged => ged.name.Equals("VehicleBay_PhoenixFacilityDef"));
             VehicleSlotFacilityComponentDef VehicleBaySlotComponent = Repo.GetAllDefs<VehicleSlotFacilityComponentDef>().FirstOrDefault(ged => ged.name.Equals("E_Element0 [VehicleBay_PhoenixFacilityDef]"));

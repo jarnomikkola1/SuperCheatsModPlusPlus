@@ -12,7 +12,39 @@ namespace SuperCheatsModPlus
 	[SerializeType(SerializeMembersByDefault = SerializeMembersType.SerializeAll)]
 	public class SuperCheatsModPlusGSInstanceData
 	{
-		public int ExampleData;
+		//public bool OpArmorAbilitiesEnabled = true;		
+		//public bool VenomTorsoCanUseBothHands = true;		
+		//public bool RemovableMutationsAndAugmentations = true;	
+		//public bool MutationsCanEquipHeadItems = true;		
+		//public bool UseMountedWeaponsManyTimesPerTurn = true;		
+		//public bool UseMountedWeaponAndMechArmOnAugments = true;		
+		//public bool FreeBionicRepair = true;		
+		//public bool OpSoldierSkills = true;
+		//public bool RemoteControlBuff = true;
+		//public bool OpLivingWeapons = true;
+		//public bool ArchAngelRL1HasBlastRadius = true;		
+		//public bool InstantResearch = true;
+		//public bool InstantManufacturing = true;
+		//public bool InstantFacilityConstruction = true;		
+		//public bool FacilitiesDoNotRequirePower = true;
+		//public bool UnlockAllFacilities = true;		
+		//public bool EverythingHalfOff = true;		
+		//public bool ManufactureEverything = true;		
+		//public bool StartWithEliteSoldiers = true;		
+		//public bool DisableCorruption = true;		
+		//public bool IncreaseSoldierInventorySlots = true;		
+		//public bool UnlockAllBionics = true;	
+		//public bool UnlockAllMutations = true;		
+		//public bool MaxLevelSoldiers = true;		
+		//public bool Give350XPToAllSoldiersOnce = true;		
+		//public bool InfiniteSpecialPoints = true;
+		//public bool Get350SpecialPointsOnce = true;		
+		//public bool UnlockAllSpecializations = true;		
+		//public bool Get10ThousandOfAllResources = true;
+		//public bool HealAllSoldiersAfterMissions = true;
+		//public bool NeverGetTiredOrExhausted = true;
+		//public bool OPKaosWeapons = true;
+		//public bool GoldArmorSkinsHaveSpecialAbilities = true;
 	}
 
 	/// <summary>
@@ -42,7 +74,7 @@ namespace SuperCheatsModPlus
 		/// </summary>
 		/// <returns>Object to serialize or null if not used.</returns>
 		public override object RecordGeoscapeInstanceData() {
-			return new SuperCheatsModPlusGSInstanceData() { ExampleData = 5 };
+			return new SuperCheatsModPlusGSInstanceData() {};
 		}
 		/// <summary>
 		/// Called when Geoscape save is being process. At this point level is already created, but GeoscapeStart is not called.

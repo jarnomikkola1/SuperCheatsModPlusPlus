@@ -37,7 +37,7 @@ using PhoenixPoint.Common.UI;
 
 namespace SuperCheatsModPlus
 {
-    internal static class Patches
+    internal class Patches
     {        
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         // Token: 0x040000DC RID: 220
@@ -48,6 +48,20 @@ namespace SuperCheatsModPlus
 
         // Token: 0x040000DE RID: 222
         internal static int MaxAbilityLimit = 7;
+
+
+        //public bool UnlockAllBionics = false;
+        //public bool UnlockAllMutations = false;
+        //public bool MaxLevelSoldiers = false;
+        //public bool Give350XPToAllSoldiersOnce = false;
+        //public bool Get350SpecialPointsOnce = false;
+        //public bool InfiniteSpecialPoints = false;
+        //public bool ManufactureEverything = false;
+        //public bool UnlockAllSpecializations = false;
+        //public bool Get10ThousandOfAllResources = false;
+        //public bool HealAllSoldiersAfterMissions = false;
+        //public bool NeverGetTiredOrExhausted = false;
+
         public static void Change_Patches()
         {                   
         }
@@ -61,7 +75,7 @@ namespace SuperCheatsModPlus
 
             private static void Postfix()
             {
-                SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
+                SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
                 if (Config.UnlockAllBionics == true)
                 {
                     UnlockBionics();
