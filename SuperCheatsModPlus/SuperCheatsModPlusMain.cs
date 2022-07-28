@@ -94,7 +94,7 @@ namespace SuperCheatsModPlus
 			/// PhoenixGame is accessible at any time.
 			PhoenixGame game = GetGame();
 			/// Apply any general game modifications.
-			
+			Patches.Change_Patches();
 			try
 			{
 				((Harmony)base.HarmonyInstance).PatchAll(base.GetType().Assembly);
@@ -108,7 +108,7 @@ namespace SuperCheatsModPlus
 			InstantStuffAndDiscounts.Change_Time();
 			EliteSoldiers.EliteSquad();
 			Corruption.Change_Corruption();
-			Patches.Change_Patches();
+			
 			MutationsAndAugmentations.Change_PermanentAug();
 			OtherChanges.Change_Others();
 			PromoSkinArmor.Create_PromoSkinArmor();
