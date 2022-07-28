@@ -58,14 +58,15 @@ namespace SuperCheatsModPlus
 	{
 		internal static readonly DefRepository Repo = GameUtl.GameComponent<DefRepository>();
 		internal static readonly SharedData Shared = GameUtl.GameComponent<SharedData>();
-		/// Config is accessible at any time, if any is declared.		
-		public new SuperCheatsModPlusConfig Config
-		{
-			get
-			{
-				return (SuperCheatsModPlusConfig)base.Config;
-			}
-		}
+		/// Config is accessible at any time, if any is declared.
+		public new SuperCheatsModPlusConfig Config => (SuperCheatsModPlusConfig)base.Config;
+		//public new SuperCheatsModPlusConfig Config
+		//{
+		//	get
+		//	{
+		//		return (SuperCheatsModPlusConfig)base.Config;
+		//	}
+		//}
 
 
 		/// This property indicates if mod can be Safely Disabled from the game.
@@ -104,16 +105,16 @@ namespace SuperCheatsModPlus
 				base.Logger.LogInfo(e.ToString() ?? "");
 			}
 
-			MountedWeaponsMechArms.Change_Augmentations();
-			InstantStuffAndDiscounts.Change_Time();
-			EliteSoldiers.EliteSquad();
-			Corruption.Change_Corruption();
-			
-			MutationsAndAugmentations.Change_PermanentAug();
-			OtherChanges.Change_Others();
-			PromoSkinArmor.Create_PromoSkinArmor();
-			SoldierSkills.Skills();
-			OpArmor.Change_Armor();
+			//MountedWeaponsMechArms.Change_Augmentations();
+			//InstantStuffAndDiscounts.Change_Time();
+			//EliteSoldiers.EliteSquad();
+			//Corruption.Change_Corruption();			
+			//MutationsAndAugmentations.Change_PermanentAug();
+			//OtherChanges.Change_Others();
+			//PromoSkinArmor.Create_PromoSkinArmor();
+			//SoldierSkills.Skills();
+			//OpArmor.Change_Armor();
+			OnConfigChanged();
 		}
 
 		/// <summary>
@@ -131,7 +132,23 @@ namespace SuperCheatsModPlus
 		/// </summary>
 		public override void OnConfigChanged()
 		{
-			/// Config is accessible at any time.
+			BaseStatSheetDef baseStatSheetDef = Repo.GetAllDefs<BaseStatSheetDef>().FirstOrDefault(a => a.name.Equals("HumanSoldier_BaseStatSheetDef"));
+			baseStatSheetDef.PersonalAbilitiesCount = Config.PersonalAbilitiesCount;
+			baseStatSheetDef.MaxStrength = Config.MaxStrength;
+			baseStatSheetDef.MaxSpeed = Config.MaxSpeed;
+			baseStatSheetDef.MaxWill = Config.MaxWill;
+			baseStatSheetDef.Stamina = Config.Stamina;
+			baseStatSheetDef.TiredStatusStaminaBelow = Config.TiredStatusStaminaBelow;
+			baseStatSheetDef.ExhaustedStatusStaminaBelow = Config.ExhaustedStatusStaminaBelow;
+
+			InstantStuffAndDiscounts.Change_Time();
+			EliteSoldiers.EliteSquad();
+			Corruption.Change_Corruption();
+			MutationsAndAugmentations.Change_PermanentAug();
+			OtherChanges.Change_Others();
+			PromoSkinArmor.Create_PromoSkinArmor();
+			SoldierSkills.Skills();
+			OpArmor.Change_Armor();
 		}
 
 

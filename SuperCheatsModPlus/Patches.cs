@@ -37,7 +37,7 @@ using PhoenixPoint.Common.UI;
 
 namespace SuperCheatsModPlus
 {
-    internal class Patches
+    internal static class Patches
     {        
         private static readonly DefRepository Repo = SuperCheatsModPlusMain.Repo;
         // Token: 0x040000DC RID: 220
@@ -49,38 +49,7 @@ namespace SuperCheatsModPlus
         // Token: 0x040000DE RID: 222
         internal static int MaxAbilityLimit = 7;
         public static void Change_Patches()
-        {
-            SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
-            BaseStatSheetDef baseStatSheetDef = Repo.GetAllDefs<BaseStatSheetDef>().FirstOrDefault(a => a.name.Equals("HumanSoldier_BaseStatSheetDef"));
-            if(Config.PersonalAbilitiesCount == true)
-            {
-                baseStatSheetDef.PersonalAbilitiesCount = 7;
-            }
-
-            if (Config.MaxStrength)
-            {
-                baseStatSheetDef.MaxStrength = 45;
-            }
-            if (Config.MaxSpeed)
-            {
-                baseStatSheetDef.MaxSpeed = 30;
-            }
-            if (Config.MaxWill)
-            {
-                baseStatSheetDef.MaxWill = 30;
-            }
-            if (Config.Stamina)
-            {
-                baseStatSheetDef.Stamina = 50;
-            }
-            if (Config.TiredStatusStaminaBelow)
-            {
-                baseStatSheetDef.TiredStatusStaminaBelow = 10;
-            }
-            if (Config.ExhaustedStatusStaminaBelow)
-            {
-                baseStatSheetDef.ExhaustedStatusStaminaBelow = 1;
-            }         
+        {                   
         }
         [HarmonyPatch(typeof(PhoenixStatisticsManager), "OnGeoscapeLevelStart")]
         internal static class PhoenixStatisticsManager_OnGeoscapeLevelStart2
@@ -93,15 +62,15 @@ namespace SuperCheatsModPlus
             private static void Postfix()
             {
                 SuperCheatsModPlusConfig Config = new SuperCheatsModPlusConfig();
-                if (Config.UnlockAllBionics)
+                if (Config.UnlockAllBionics == true)
                 {
                     UnlockBionics();
                 }
-                if (Config.UnlockAllMutations)
+                if (Config.UnlockAllMutations == true)
                 {
                     UnlockMutations();
                 }
-                if (Config.MaxLevelSoldiers)
+                if (Config.MaxLevelSoldiers == true)
                 {
                     MaxLvLSoldiers();
                 }

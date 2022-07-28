@@ -196,7 +196,7 @@ namespace SuperCheatsModPlus
             }
 
 
-            if (Config.GoldArmorSkinsHaveSpecialAbilities)
+            if (Config.GoldArmorSkinsHaveSpecialAbilities == true)
             {
                 assaultTorsoGold.Abilities = new AbilityDef[]
                 {

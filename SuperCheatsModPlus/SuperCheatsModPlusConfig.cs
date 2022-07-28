@@ -194,33 +194,33 @@ namespace SuperCheatsModPlus
 		description: "Gold Promo Armor Set Have Special Abilities")]
 		public  bool GoldArmorSkinsHaveSpecialAbilities = true;
 		
-		[ConfigField(text: "Soldier Get 7 Personal Perks",
+		[ConfigField(text: "Adjust Personal Perks Amount",
 		description: "Adjust Amount Of Personal Perks Soldiers Get, Max 7")]	
-		public bool PersonalAbilitiesCount = true;
+		public int PersonalAbilitiesCount = 3;
 		
-		[ConfigField(text: "Increase Maximum Strength By 10",
+		[ConfigField(text: "Adjust Maximum Strength",
 		description: "vanilla default is 35")]		
-		public bool MaxStrength = true;
+		public int MaxStrength = 35;
 		
-		[ConfigField(text: "Increase Maximum Willpower By 10",
+		[ConfigField(text: "Adjust Maximum Willpower",
 		description: "vanilla default is 20")]		
-		public bool MaxWill = true;
+		public int MaxWill = 20;
 		
-		[ConfigField(text: "Increase Maximum Speed By 10",
+		[ConfigField(text: "Adjust Maximum Speed",
 		description: "vanilla default is 20")]
-		public bool MaxSpeed = true;
+		public int MaxSpeed = 20;
 		
-		[ConfigField(text: "Increase Maximum Stamina By 10",
+		[ConfigField(text: "Adjust Maximum Stamina",
 		description: "vanilla default is 40")]
-		public bool Stamina = true;
+		public int Stamina = 40;
 		
-		[ConfigField(text: "Tired Status Stamina Below 10%",
+		[ConfigField(text: "Adjust Tired Status Stamina Below",
 		description: "Soldiers will get the status 'Tired' when their stamina falls be below this value (percentage), vanilla default is 25%, 30")]		
-		public bool TiredStatusStaminaBelow = true;
+		public int TiredStatusStaminaBelow = 30;
 		
-		[ConfigField(text: "Exhausted Status Stamina Below 1%",
+		[ConfigField(text: "Adjust Exhausted Status Stamina Below",
 		description: "Soldiers will get the status 'Exhausted' when their stamina falls be below this value (percentage), vanilla default is 0%, 10")]
-		public bool ExhaustedStatusStaminaBelow = true;
+		public int ExhaustedStatusStaminaBelow = 10;
 		//
 		//[ConfigField(text: "Recover From Paralysis And Virus Faster",
 		//description: "Recover From Paralysis And Virus Faster0")]			
