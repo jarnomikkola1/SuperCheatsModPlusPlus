@@ -58,6 +58,15 @@ namespace SuperCheatsModPlus
 	{
 		internal static readonly DefRepository Repo = GameUtl.GameComponent<DefRepository>();
 		internal static readonly SharedData Shared = GameUtl.GameComponent<SharedData>();
+		public static ModMain Main { get; private set; }
+		//internal static Harmony Harmony = (Harmony)Main.HarmonyInstance;
+		//public static  HarmonyLib.Harmony Harmony
+        //{
+        //    get
+        //    {
+		//		return (Harmony)Main.HarmonyInstance;
+		//	}
+        //}  
 		/// Config is accessible at any time, if any is declared.
 		//public new SuperCheatsModPlusConfig Config => (SuperCheatsModPlusConfig)base.Config;
 		public new SuperCheatsModPlusConfig Config
@@ -75,7 +84,7 @@ namespace SuperCheatsModPlus
 		/// Safely sisabled mods can be reenabled again. Unsafely disabled mods will need game restart ot take effect.
 		/// Unsafely disabled mods usually cannot revert thier changes in OnModDisabled
 		public override bool CanSafelyDisable => true;
-		public static ModMain Main { get; private set; }
+		
 
 		/// <summary>
 		/// Callback for when mod is enabled. Called even on game starup.
@@ -155,6 +164,23 @@ namespace SuperCheatsModPlus
 			PromoSkinArmor.Create_PromoSkinArmor();
 			SoldierSkills.Skills();
 			OpArmor.Change_Armor();
+			MountedWeaponsMechArms.Change_Augmentations();
+			Patches.Change_Patches();
+			AAPatches.Apply();
+
+
+			//if (Config.SkipIntroLogos == true)
+			//{
+			//	Harmony.Patch( Harmony, typeof(PhoenixPoint.Common.Game.PhoenixGame), "RunGameLevel", typeof(SuperCheatsModPlus.AAPatches), "Prefix_PhoenixGame_RunGameLevel");
+			//}
+			//if (Config.SkipIntroMovie == true)
+			//{
+			//	HarmonyHelpers.Patch(Harmony, typeof(PhoenixPoint.Home.View.ViewStates.UIStateHomeScreenCutscene), "EnterState", typeof(SuperCheatsModPlus.AAPatches), null, "Postfix_UIStateHomeScreenCutscene_EnterState");
+			//}
+			//if (Config.SkipLandingSequences == true)
+			//{
+			//	HarmonyHelpers.Patch(Harmony, typeof(PhoenixPoint.Tactical.View.ViewStates.UIStateTacticalCutscene), "EnterState", typeof(SuperCheatsModPlus.AAPatches), null, "Postfix_UIStateTacticalCutscene_EnterState");
+			//}
 		}
 
 

@@ -168,7 +168,7 @@ namespace SuperCheatsModPlus
                     Repo.GetAllDefs<FacilityResearchRewardDef>().FirstOrDefault(a => a.name.Equals("ANU_MutationTech_ResearchDef_FacilityResearchRewardDef_0")),
                     Repo.GetAllDefs<FacilityResearchRewardDef>().FirstOrDefault(a => a.name.Equals("PX_AntediluvianArchaeology_ResearchDef_FacilityResearchRewardDef_0")),
                 };
-            }
+            }            
 
             //if (Config.TurnOnOtherAdjustments == true)
             //{
