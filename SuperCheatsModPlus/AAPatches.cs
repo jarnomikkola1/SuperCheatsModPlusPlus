@@ -37,6 +37,7 @@ using Base.UI.VideoPlayback;
 using PhoenixPoint.Home.View.ViewStates;
 using PhoenixPoint.Common.Game;
 using Base.Levels;
+using PhoenixPoint.Common.Levels.Missions;
 
 namespace SuperCheatsModPlus
 {
@@ -135,6 +136,17 @@ namespace SuperCheatsModPlus
             }
             List<string> turretsToChange = new List<string>() { "Armadillo_Gauss_Turret", "Scarab_Missile_Turret", "Aspida_Arms" };
             //AAPatches.Prefix_PhoenixGame_RunGameLevel();
+
+            List<TacMissionTypeDef> defs = defRepository.DefRepositoryDef.AllDefs.OfType<TacMissionTypeDef>().ToList();
+            foreach (TacMissionTypeDef def in defs)
+            {
+                def.MaxPlayerUnits += Config.MaxPlayerUnitsAdd;
+
+                if (def.DontRecoverItems == true && Config.AlwaysRecoverAllItemsFromTacticalMissions)
+                {
+                    def.DontRecoverItems = false;
+                }             
+            }
         }
         private static bool CanReturnFireFromAngle(TacticalActor shooter, TacticalActorBase target, float reactionAngleCos)
         {
@@ -232,7 +244,85 @@ namespace SuperCheatsModPlus
         //    }
         //}
 
+        [HarmonyPatch(typeof(PhoenixGame), "RunGameLevel")]
+        public static class RGNPATCH
+        {
+            public static bool Prefix(PhoenixGame __instance, LevelSceneBinding levelSceneBinding, ref IEnumerator<NextUpdate> __result)
+            {
+                SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;                
+                try
+                {
+                    if (levelSceneBinding == __instance.Def.IntroLevelSceneDef.Binding)
+                    {
+                        __result = Enumerable.Empty<NextUpdate>().GetEnumerator();
+                        return false;
+                    }
+                    if (Config.SkipIntroLogos == true)
+                    {                        
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }                  
+                }
+                catch (Exception e)
+                {
+                    return true;
+                }
+            }          
+        }
+        [HarmonyPatch(typeof(UIStateHomeScreenCutscene), "EnterState")]
+        public static class RGNPATCH2
+        {
+            public static void Postfix(UIStateHomeScreenCutscene __instance, VideoPlaybackSourceDef ____sourcePlaybackDef)
+            {
+                SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
+                if(Config.SkipIntroMovie == true)
+                {
+                    try
+                    {
+                        if (____sourcePlaybackDef == null)
+                        {
+                            return;
+                        }
 
+                        if (____sourcePlaybackDef.ResourcePath.Contains("Game_Intro_Cutscene"))
+                        {
+                            typeof(UIStateHomeScreenCutscene).GetMethod("OnCancel", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(__instance, null);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                    }
+                }              
+            }
+        }
+        [HarmonyPatch(typeof(UIStateTacticalCutscene), "EnterState")]
+        public static class RGNPATCH3
+        {
+            public static void Postfix(UIStateTacticalCutscene __instance, VideoPlaybackSourceDef ____sourcePlaybackDef)
+            {
+                SuperCheatsModPlusConfig Config = (SuperCheatsModPlusConfig)SuperCheatsModPlusMain.Main.Config;
+                if (Config.SkipLandingSequences == true)
+                {
+                    try
+                    {
+                        if (____sourcePlaybackDef == null)
+                        {
+                            return;
+                        }
+                        if (____sourcePlaybackDef.ResourcePath.Contains("LandingSequences"))
+                        {
+                            typeof(UIStateTacticalCutscene).GetMethod("OnCancel", BindingFlags.NonPublic | BindingFlags.Instance)?.Invoke(__instance, null);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                    }
+                }
+            }
+        }
         [HarmonyPatch(typeof(GeoscapeEventSystem), "PhoenixFaction_OnSiteFirstTimeVisited")]
     public static class GeoscapeEventSystem_PhoenixFaction_OnSiteFirstTimeVisited_Patch
     {

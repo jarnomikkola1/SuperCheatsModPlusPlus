@@ -299,17 +299,17 @@ namespace SuperCheatsModPlus
 		//description: "Allows Aircraft To Be Scraped For Resources")]
 		//public bool EnableScrapAircraft = false;
 
-		//[ConfigField(text: "Skip Intro Logos",
-		//description: "Skips logos when loading up the game")]
-		//public bool SkipIntroLogos = false;
-		//
-		//[ConfigField(text: "Skip Intro Movie",
-		//description: "Skips intro movie")]
-		//public bool SkipIntroMovie = false;
-		//
-		//[ConfigField(text: "Skip Landing Sequences",
-		//description: "Skips landing sequences before tactical missions")]
-		//public bool SkipLandingSequences = false;
+		[ConfigField(text: "Skip Intro Logos",
+		description: "Skips logos when loading up the game")]
+		public bool SkipIntroLogos = true;
+		
+		[ConfigField(text: "Skip Intro Movie",
+		description: "Skips intro movie")]
+		public bool SkipIntroMovie = true;
+		
+		[ConfigField(text: "Skip Landing Sequences",
+		description: "Skips landing sequences before tactical missions")]
+		public bool SkipLandingSequences = true;
 
 		[ConfigField(text: "Aircraft Tiamat Speed",
 		description: "Maximum speed for the Tiamat")]
