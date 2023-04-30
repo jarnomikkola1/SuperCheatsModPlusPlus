@@ -17,27 +17,23 @@ using PhoenixPoint.Tactical.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using System.Collections;
 using PhoenixPoint.Tactical.View.ViewControllers;
 using PhoenixPoint.Tactical.View.ViewStates;
 using UnityEngine.UI;
-using PhoenixPoint.Geoscape.View.ViewControllers.Roster;
-using PhoenixPoint.Geoscape.View.ViewStates;
-using PhoenixPoint.Geoscape.View;
 using PhoenixPoint.Geoscape.View.ViewModules;
-using UnityEngine.EventSystems;
-using Base.UI;
-using PhoenixPoint.Common.Entities.Items;
-using Base.UI.MessageBox;
 using System.Reflection;
 using Base.UI.VideoPlayback;
 using PhoenixPoint.Home.View.ViewStates;
 using PhoenixPoint.Common.Game;
 using Base.Levels;
 using PhoenixPoint.Common.Levels.Missions;
+using Base;
+using PhoenixPoint.Geoscape.Levels.Factions;
+using Base.Entities.Abilities;
+using PhoenixPoint.Common.Entities.Characters;
+
 
 namespace SuperCheatsModPlus
 {
@@ -83,34 +79,99 @@ namespace SuperCheatsModPlus
                 }
             }
 
-            List<GeoVehicleDef> geoVehicleDefs = defRepository.DefRepositoryDef.AllDefs.OfType<GeoVehicleDef>().ToList();
-            foreach (GeoVehicleDef gvDef in geoVehicleDefs)
-            {
-                if (gvDef.name.Contains("Blimp"))
+            if (Config.AircraftEdits == true)
                 {
-                    gvDef.BaseStats.Speed.Value = Config.AircraftBlimpSpeed;
-                    gvDef.BaseStats.SpaceForUnits = Config.AircraftBlimpSpace;
-                    gvDef.BaseStats.MaximumRange.Value = Config.AircraftBlimpRange;
-                }
-                else if (gvDef.name.Contains("Thunderbird"))
-                {
-                    gvDef.BaseStats.Speed.Value = Config.AircraftThunderbirdSpeed;
-                    gvDef.BaseStats.SpaceForUnits = Config.AircraftThunderbirdSpace;
-                    gvDef.BaseStats.MaximumRange.Value = Config.AircraftThunderbirdRange;
-                }
-                else if (gvDef.name.Contains("Manticore"))
-                {
-                    gvDef.BaseStats.Speed.Value = Config.AircraftManticoreSpeed;
-                    gvDef.BaseStats.SpaceForUnits = Config.AircraftManticoreSpace;
-                    gvDef.BaseStats.MaximumRange.Value = Config.AircraftManticoreRange;
-                }
-                else if (gvDef.name.Contains("Helios"))
-                {
-                    gvDef.BaseStats.Speed.Value = Config.AircraftHeliosSpeed;
-                    gvDef.BaseStats.SpaceForUnits = Config.AircraftHeliosSpace;
-                    gvDef.BaseStats.MaximumRange.Value = Config.AircraftHeliosRange;
-                }
+                GeoVehicleDef gvDef = (GeoVehicleDef)defRepository.GetDef("8CFFEF5F-6FB9-3EC4-DA5D-234BF40A4B4C"); // <- blimp
+                gvDef.BaseStats.Speed.Value = Config.AircraftBlimpSpeed;
+                gvDef.BaseStats.SpaceForUnits = Config.AircraftBlimpSpace;
+                gvDef.BaseStats.MaximumRange.Value = Config.AircraftBlimpRange;
+
+                GeoVehicleDef gvDef1 = (GeoVehicleDef)defRepository.GetDef("B857B76D-BDDB-4CA9-A1CA-895A540B17C8"); // <- blimp + module
+                gvDef1.BaseStats.Speed.Value = Config.AircraftBlimpSpeed;
+                gvDef1.BaseStats.SpaceForUnits = Config.AircraftBlimpSpace + 4;
+                gvDef1.BaseStats.MaximumRange.Value = Config.AircraftBlimpRange;
+
+                GeoVehicleDef gvDef2 = (GeoVehicleDef)defRepository.GetDef("7CFBEA94-A22E-2394-5A98-84E70E3E39E3"); // <- thunderbird + module
+                gvDef2.BaseStats.Speed.Value = Config.AircraftThunderbirdSpeed;
+                gvDef2.BaseStats.SpaceForUnits = Config.AircraftThunderbirdSpace;
+                gvDef2.BaseStats.MaximumRange.Value = Config.AircraftThunderbirdRange;
+        
+                GeoVehicleDef gvDef3 = (GeoVehicleDef)defRepository.GetDef("E56C60DE-979F-F524-5B3E-311EF1D5FD22"); // <- manticore + module 
+                gvDef3.BaseStats.Speed.Value = Config.AircraftManticoreSpeed;
+                gvDef3.BaseStats.SpaceForUnits = Config.AircraftManticoreSpace;
+                gvDef3.BaseStats.MaximumRange.Value = Config.AircraftManticoreRange;
+       
+                GeoVehicleDef gvDef4 = (GeoVehicleDef)defRepository.GetDef("C4CE491A-D507-2394-A809-BD9D79328525"); // <- masked manticore + module 
+                gvDef4.BaseStats.Speed.Value = Config.AircraftManticoreSpeed;
+                gvDef4.BaseStats.SpaceForUnits = Config.AircraftManticoreSpace + 2;
+                gvDef4.BaseStats.MaximumRange.Value = Config.AircraftManticoreRange;
+
+                GeoVehicleDef gvDef5 = (GeoVehicleDef)defRepository.GetDef("68E1583A-9E49-DAD4-5815-F5B1A41A5B90"); // <- helios + module
+                gvDef5.BaseStats.Speed.Value = Config.AircraftHeliosSpeed;
+                gvDef5.BaseStats.SpaceForUnits = Config.AircraftHeliosSpace;
+                gvDef5.BaseStats.MaximumRange.Value = Config.AircraftHeliosRange;
             }
+
+            TacticalAbilityDef shieldDef = (TacticalAbilityDef)defRepository.GetDef("682e7b76-55c9-b074-1b85-bb3c96805f34"); // <- normal Phoenix Shield deploy ability
+            shieldDef.ActionPointCost = Config.DepSiheldCost / 100;
+            
+            GeoPhoenixFactionDef geoPhoenixFactionDef = defRepository.GetAllDefs<GeoPhoenixFactionDef>().FirstOrDefault((GeoPhoenixFactionDef a) => a.name.Equals("Phoenix_GeoPhoenixFactionDef"));
+			geoPhoenixFactionDef.DeploymentCostToSupplies = Config.DepFoodRatio / 100f;
+			geoPhoenixFactionDef.DeploymentCostToMutagens = Config.DepMutagenRatio / 100f;
+
+            if (Config.HeavyEdits == true)
+            {
+                //we define the items
+                TacticalItemDef goldDef = (TacticalItemDef)defRepository.GetDef("b681dcb5-1c2d-2894-aa4e-4c88753afe4a"); // <- golden armor
+                TacticalItemDef pxHeDef = (TacticalItemDef)defRepository.GetDef("c5e7aab0-fc87-b2a4-ab69-804ad7116e17"); // <- px armor
+                TacticalItemDef santaHeDef = (TacticalItemDef)defRepository.GetDef("8e1af70e-ce0b-7774-4904-6fd0e2b9e68d"); // <- santa heavy armor
+                TacticalItemDef njHevDef = (TacticalItemDef)defRepository.GetDef("5f6e5cd2-71f6-f254-d935-aae7817aa07e"); // <- nj heavy armor
+                TacticalItemDef beastHeDef = (TacticalItemDef)defRepository.GetDef("d97a6bc4-f194-04c4-0bb8-6cb5b10dba13"); // <- beast heavy armor
+                //and we add the hop ability
+                goldDef.Abilities = new AbilityDef[] {
+                goldDef.Abilities[0],
+                defRepository.GetAllDefs<AbilityDef>().FirstOrDefault(a => a.name.Equals("Exo_Leap_AbilityDef")),
+                };
+                pxHeDef.Abilities = new AbilityDef[] {
+                pxHeDef.Abilities[0],
+                defRepository.GetAllDefs<AbilityDef>().FirstOrDefault(a => a.name.Equals("Exo_Leap_AbilityDef")),
+                };
+                santaHeDef.Abilities = new AbilityDef[] {
+                santaHeDef.Abilities[0],
+                defRepository.GetAllDefs<AbilityDef>().FirstOrDefault(a => a.name.Equals("Exo_Leap_AbilityDef")),
+                };
+                njHevDef.Abilities = new AbilityDef[] {
+                njHevDef.Abilities[0],
+                defRepository.GetAllDefs<AbilityDef>().FirstOrDefault(a => a.name.Equals("Exo_Leap_AbilityDef")),
+                };
+
+                beastHeDef.Abilities = new AbilityDef[] {
+                beastHeDef.Abilities[0],
+                defRepository.GetAllDefs<AbilityDef>().FirstOrDefault(a => a.name.Equals("Exo_Leap_AbilityDef")),
+                };
+
+                //then we take the jetjump ability and remove its proficiency penalty
+
+
+                JetJumpAbilityDef hopeAbility = (JetJumpAbilityDef)defRepository.GetDef("4d3c4688-0f24-d164-3a06-0dd68caf7867");
+                hopeAbility.FumblePerc = 0;
+            }
+
+
+            ///UUUUUSSSS
+            
+	        if (Config.skilloverride == true)
+            {
+			        DefRepository defRepositor2y = GameUtl.GameComponent<DefRepository>();
+			        foreach (GameDifficultyLevelDef gameDifficultyLevelDef in defRepositor2y.DefRepositoryDef.AllDefs.OfType<GameDifficultyLevelDef>())
+		            {
+	    			    gameDifficultyLevelDef.SoldierSkillPointsPerMission = Config.SkillPointsPerMission;
+                    }
+                LevelProgressionDef easyaspie = (LevelProgressionDef)defRepository.GetDef("ffd0b060-d778-0504-39fd-4269dee2a199");
+                easyaspie.SkillpointsPerLevel = Config.Skillpointamount;
+            }
+            
+            ///WANHAT
 
             foreach (TacCharacterDef tcDef in defRepository.DefRepositoryDef.AllDefs.OfType<TacCharacterDef>().Where(d => d.IsVehicle || d.IsMutog))
             {
@@ -131,6 +192,10 @@ namespace SuperCheatsModPlus
                     else if (tcDef.name.Contains("Aspida"))
                     {
                         tcDef.Volume = Config.OccupyingSpaceAspida;
+                    }
+                    else if (tcDef.name.Contains("Kaos_Buggy"))
+                    {
+                        tcDef.Volume = Config.OccupyingSpaceKaosBuggy;
                     }
                 }
             }
@@ -155,7 +220,7 @@ namespace SuperCheatsModPlus
             {
                 return true;
             }
-
+            
             if (reactionAngleCos > 0.99)
             {
                 return true;
@@ -268,6 +333,7 @@ namespace SuperCheatsModPlus
                 }
                 catch (Exception e)
                 {
+                    SuperCheatsModPlusLogger.Error(e);
                     return true;
                 }
             }          
@@ -294,6 +360,7 @@ namespace SuperCheatsModPlus
                     }
                     catch (Exception e)
                     {
+                        SuperCheatsModPlusLogger.Error(e);
                     }
                 }              
             }
@@ -319,6 +386,7 @@ namespace SuperCheatsModPlus
                     }
                     catch (Exception e)
                     {
+                        SuperCheatsModPlusLogger.Error(e);
                     }
                 }
             }
@@ -357,7 +425,8 @@ namespace SuperCheatsModPlus
                 }
             }
             catch (Exception e)
-            {              
+            {
+                 SuperCheatsModPlusLogger.Error(e);
             }
         }
     }
@@ -399,6 +468,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
 
@@ -469,6 +539,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
     }
@@ -494,6 +565,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                SuperCheatsModPlusLogger.Error(e);
                 return true;
             }
         }
@@ -514,6 +586,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
     }
@@ -555,6 +628,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
     }
@@ -601,6 +675,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
     }
@@ -651,6 +726,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
     }
@@ -710,6 +786,7 @@ namespace SuperCheatsModPlus
 
                 catch (Exception e)
                 {
+                    SuperCheatsModPlusLogger.Error(e);
                 }
             }
         }
@@ -779,6 +856,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                    SuperCheatsModPlusLogger.Error(e);
             }
         }
     
@@ -1034,4 +1112,3 @@ namespace SuperCheatsModPlus
         //}
     }
 }
-
