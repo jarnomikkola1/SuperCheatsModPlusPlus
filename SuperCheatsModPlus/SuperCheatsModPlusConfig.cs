@@ -60,7 +60,7 @@ namespace SuperCheatsModPlus
 		/// Supported types for in-game UI are:
 		[ConfigField(text: "Max Augmentations",
 		description: "Max Augmentations")]
-		public int MaxAugmentations = 3;
+		public int MaxAugmentations = 2;
 
 		[ConfigField(text: "Op Armor Abilities",
 		description: "Give OP Abilities To Mutations/Augmentations")]
@@ -311,6 +311,10 @@ namespace SuperCheatsModPlus
 		description: "Skips landing sequences before tactical missions")]
 		public bool SkipLandingSequences = true;
 
+		[ConfigField(text: "Aircraft edits",
+		description: "Applies the following edits to the game in enabled")]
+		public bool AircraftEdits = false;
+
 		[ConfigField(text: "Aircraft Tiamat Speed",
 		description: "Maximum speed for the Tiamat")]
 		public float AircraftBlimpSpeed = 250f;
@@ -374,6 +378,38 @@ namespace SuperCheatsModPlus
 		[ConfigField(text: "Occupying Space Aspida",
 		description: "Size of Aspida for squad/space calculations")]
 		public int OccupyingSpaceAspida = 3;
+
+		[ConfigField(text: "Occupying Space Kaos Buggy",
+		description: "Size of Kaos Buggy for squad/space calculations")]
+		public int OccupyingSpaceKaosBuggy = 3;
+
+		[ConfigField(text: "Deployment to Food Harvest Ratio",
+		description: "This is the percentage amount of mutagen harvested from pandoran creatures from what the game describes as it's deployment cost.")]
+		public float DepFoodRatio = 30f;
+
+		[ConfigField(text: "Deployment to Mutagen Harvest Ratio",
+		description: "This is the percentage amount of mutagen harvested from pandoran creatures from what the game describes as it's deployment cost.")]
+		public float DepMutagenRatio = 50f;
+
+		[ConfigField(text: "Shield deployment cost",
+		description: "This is the percentage amount of action points shilds deployment costs for the player.")]
+		public float DepSiheldCost = 25f;
+
+		[ConfigField(text: "Heavy Armors Jumpjet edits",
+		description: "Gives heavy armor rocket leap ability and removes the fumble chance")]
+		public bool HeavyEdits = false;
+
+		[ConfigField(text: "Enables the skill point edits",
+		description: "Just a switch to the following edits")]
+		public bool skilloverride = false;
+
+		[ConfigField(text: "Default skill points per mission",
+		description: "This setting overwrites all the difficulty settings.")]
+		public int SkillPointsPerMission = 5;
+
+		[ConfigField(text: "Default skill points per level",
+		description: "...")]
+		public int Skillpointamount = 20;
 
 		[ConfigField(text: "Disable Ambushes",
 		description: "Disables ambushes when exploring sites.")]
