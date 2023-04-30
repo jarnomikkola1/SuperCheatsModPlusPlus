@@ -7,8 +7,8 @@
     <ProjectGuid>{DEBF1B91-513C-495A-8D9E-5A2895399FFD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuperCheatsModPlus</RootNamespace>
-    <AssemblyName>SuperCheatsModPlus</AssemblyName>
+    <RootNamespace>SuperCheatsModPlusPlus</RootNamespace>
+    <AssemblyName>SuperCheatsModPlusPlus</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AAPatches.cs" />
+    <Compile Include="SuperCheatsModPlusLogger.cs" />
     <Compile Include="Corruption.cs" />
     <Compile Include="EliteSoldiers.cs" />
     <Compile Include="EnterState.cs" />
