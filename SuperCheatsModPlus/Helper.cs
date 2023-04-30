@@ -59,6 +59,7 @@ namespace SuperCheatsModPlus
             }
             catch (Exception e)
             {
+                SuperCheatsModPlusLogger.Error(e);
                 return null;
             }
         }

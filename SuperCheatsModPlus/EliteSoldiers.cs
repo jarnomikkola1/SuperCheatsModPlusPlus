@@ -4,6 +4,21 @@ using Base.Core;
 using PhoenixPoint.Common.Core;
 using PhoenixPoint.Tactical.Entities;
 
+/*
+
+using Base.Defs;
+using Base.UI;
+using PhoenixPoint.Common.Core;
+using PhoenixPoint.Geoscape.Entities;
+using PhoenixPoint.Geoscape.Events.Eventus;
+using PhoenixPoint.Geoscape.Levels;
+using PhoenixPoint.Tactical.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+*/
+
 namespace SuperCheatsModPlus
 {
     internal class EliteSoldiers
@@ -21,6 +36,10 @@ namespace SuperCheatsModPlus
             TacCharacterDef synedrionLeader = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("SY_Leader_TacCharacterDef"));
             TacCharacterDef pirateKing = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("NJ_SuperHeavy_TacCharacterDef"));
             TacCharacterDef godly = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("NJ_Godly_TacCharacterDef"));
+//            TacCharacterDef armadillo = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("NJ_Armadillo_TacCharacterDef"));
+//            TacCharacterDef scarab = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("PX_Scarab_TacCharacterDef"));
+//            TacCharacterDef aspida = Repo.GetAllDefs<TacCharacterDef>().FirstOrDefault(a => a.name.Equals("SY_Aspida_TacCharacterDef"));
+
 
             if (Config.StartWithEliteSoldiers == true)
             {
@@ -65,6 +84,10 @@ namespace SuperCheatsModPlus
                     exalted,
                 };
             }
+            //            if (Config.Armadillo == true) //from https://github.com/Voland163/TFTV/blob/master/TFTV/TFTVStarts.cs 
+            //            {
+            //                startingTemplates.Add(armadillo);
+            //            }
         }
     }
 }

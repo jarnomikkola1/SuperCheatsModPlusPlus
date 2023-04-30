@@ -56,6 +56,12 @@ namespace SuperCheatsModPlus
 	/// </summary>
 	public class SuperCheatsModPlusMain : ModMain
 	{
+		internal static string LogPath;
+		internal static string ModDirectory;
+//		internal static string LocalizationDirectory;
+//		internal static string TexturesDirectory;
+
+
 		internal static readonly DefRepository Repo = GameUtl.GameComponent<DefRepository>();
 		internal static readonly SharedData Shared = GameUtl.GameComponent<SharedData>();
 		public static ModMain Main { get; private set; }
@@ -91,6 +97,16 @@ namespace SuperCheatsModPlus
 		/// </summary>
 		public override void OnModEnabled()
 		{
+
+			ModDirectory = Instance.Entry.Directory;
+			LogPath = Path.Combine(ModDirectory, "SuperCheatsModPlusLogger.log");
+
+			// In your ModMain class in OnModEnabled()
+			bool debuglevel = false; // for additional output with using .Debug, see below, 'false' -> don't log .Debug() messages, 'true' -> log them
+			SuperCheatsModPlusLogger.Initialize(LogPath, debuglevel, Instance.Entry.Directory, "SuperCheatsModPlusLogger."); // "MyFancyMod" => your mod name
+
+			//SuperCheatsModPlusLogger.Error(e);
+
 			Main = this;
 			/// All mod dependencies are accessible and always loaded.
 			int c = base.Dependencies.Count<ModEntry>();
